@@ -1,7 +1,7 @@
 # Личный проект «Глейси»
 
 * Студент: [DZIANIS DZICHKOUSKI](https://up.htmlacademy.ru/htmlcss/19/user/352891).
-* Наставник: `Неизвестно`.
+* Наставник: [Василика Климова](https://htmlacademy.ru/profile/id415397).
 
 ---
 
