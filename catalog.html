@@ -35,19 +35,80 @@
           <li><a class="site-navigation-about" href="#">О Компании</a></li>
         </ul>
         <ul class="user-navigation">
-          <li class="search-link"></li>
-          <li class="login-link">Вход</li>
-          <li class="basket-link">Пусто</li>
+          <li class="search-item">
+              <a class="search-icon" href="#"></a>
+              <section class="popup popup-search">
+                  <h2 class="visually-hidden">Поиск по сайту</h2>
+                  <!-- Здесь будет форма -->
+              </section>
+          </li>
+          <li class="login-item">
+            <a class="login-link" href="#">Вход</a>
+            <section class="popup popup-login">
+                <h2 class="visually-hidden">Вход или регистрация на сайте</h2>
+                <!-- Здесь будет форма -->
+            </section>
+          </li>
+          <li class="basket-item">
+            <a href="#">2 товара</a>
+            <section class="popup popup-basket">
+                <h2 class="visually-hidden">Товары корзины</h2>
+                <form class="basket-form">
+                  <table>
+                    <thead class="visually-hidden">
+                      <tr>
+                        <td>Удалить товар</td>
+                        <td>Картинка товара</td>
+                        <td>Название товара</td>
+                        <td>Вес товара и цена за килограммм</td>
+                        <td>Итоговая цена</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a class="basket-item-delete" href="#">Удалить</a></td>
+                        <td><img src="http://placehold.it/33x33" width="33" height="33" alt="Пломбир"></td>
+                        <td>Пломбир с апельсиновым джемом</td>
+                        <td>1,5 кг х <span class="basket-price-for-kilo">200 руб.</span></td>
+                        <td>300 руб.</td>
+                      </tr>
+                      <tr>
+                        <td><a class="basket-item-delete" href="#">Удалить</a></td>
+                        <td><img src="http://placehold.it/33x33" width="33" height="33" alt="Клубничный пломбир"></td>
+                        <td>Клубничный пломбир с присыпкой  из белого шоколада</td>
+                        <td>1,5 кг х <span class="basket-price-for-kilo">300 руб.</span></td>
+                        <td>450 руб.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p><b>Итого: 750 руб.</b></p>
+                  <input class="button order-button" type="submit" value="Оформить заказ">
+                </form>
+            </section>
+          </li>
         </ul>
       </nav>
       <p class="header-contact-info">
         С 10 до 20, ежедневно
         <span class="header-phone">8 812 450-25-25</span>
       </p>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Главная</a></li>
+        <li class="breadcrumb-item"><a href="#">Каталог</a></li>
+        <li class="breadcrumb-item active">Сливочное</li>
+      </ol>
     </header>
 
     <main>
+      <h1>Сливочное мороженое</h1>
 
+      <section>
+        <h2 class="visually-hidden">Фильтр для каталога</h2>
+      </section>
+
+      <section>
+        <h2 class="visually-hidden">Каталог</h2>
+      </section>
     </main>
 
     <footer class="main-footer">
