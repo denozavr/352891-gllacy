@@ -41,14 +41,32 @@
               <a class="search-icon" href="#"></a>
               <section class="popup popup-search">
                   <h2 class="visually-hidden">Поиск по сайту</h2>
-                  <!-- Здесь будет форма -->
+                  <form class="search-form show-on-hover" action="https://echo.htmlacademy.ru" method="get">
+                    <label class="visually-hidden" for="search-field">Поиск</label>
+                    <input id="search-field" type="search" name="search" placeholder="Что ищем?">
+                  </form>
               </section>
           </li>
           <li class="login-item">
             <a class="login-link" href="#">Вход</a>
             <section class="popup popup-login">
                 <h2 class="visually-hidden">Вход или регистрация на сайте</h2>
-                <!-- Здесь будет форма -->
+                <form class="login-form show-on-hover" action="https://echo.htmlacademy.ru" method="post">
+                  <p>
+                    <label class="visually-hidden" for="login-email">Электронная почта</label>
+                    <input id="login-email" type="email" name="login-email" placeholder="Электронная почта" required>
+                  </p>
+                  <p>
+                    <label class="visually-hidden" for="login-password">Пароль</label>
+                    <input id="login-password" type="password" name="login-password" placeholder="Пароль" required>
+                  </p>
+
+                  <button class="button button-submit" type="submit">Отправить</button>
+                  <ul class="login-links-list">
+                    <li class="login-link"><a href="#">Забыли пароль?</a></li>
+                    <li class="login-link"><a href="#">Новая регистрация</a></li>
+                  </ul>
+                </form>
             </section>
           </li>
           <li class="basket-item">Пусто</li>
@@ -165,9 +183,10 @@
         <p>
           Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)
         </p>
-        <form> <!--Формы в задании писали не размечать но это сильно простая, как мне кажется, поэтому разметил  -->
-          <input type="email">
-          <input type="submit" value="Отправить">
+        <form class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
+          <label class="visually-hidden" for="subscription-email">Электронная почта</label>
+          <input id="subscription-email" type="email" name="subscription-email" placeholder="Электронная почта" required>
+          <button class="button button-submit" type="submit">Отправить</button>
         </form>
       </article>
 
@@ -219,8 +238,23 @@
 
     <section class="modal modal-contacts">
       <h2>Мы обязательно вам ответим!</h2>
-      <span class="modal-close">x</span>
-      <!-- Здесь будет форма -->
+      <form class="contact-form" action="https://echo.htmlacademy.ru" method="post">
+        <p>
+          <label class="visually-hidden" for="contact-name">Ваше имя</label>
+          <input id="contact-name" type="text" name="contact-name" placeholder="Как вас зовут?" required>
+        </p>
+        <p>
+          <label class="visually-hidden" for="contact-email">Ваша электронная почта</label>
+          <input id="contact-email" type="email" name="contact-email" placeholder="Ваша почта для ответа?" required>
+        </p>
+        <p>
+          <label class="visually-hidden" for="contact-comment">Ваш комментарий</label>
+          <textarea name="contact-comment" cols="53" rows="10" placeholder="Напишите что-нибудь..." required></textarea><!-- 428 на 155 -->
+        </p>
+
+        <button class="button button-submit" type="submit">Отправить</button>
+      </form>
+      <button class="modal-close" type="button">Закрыть</button>
     </section>
 
   </body>
