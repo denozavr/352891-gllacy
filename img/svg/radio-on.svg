@@ -1,8 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
-    <defs>
-        <style>
-            .cls-1{opacity:.8}
-        </style>
-    </defs>
-    <image id="radio-on" class="cls-1" width="22" height="22" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAQlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////8AAAAI4fSUAAAAFXRSTlMAFF6XvswKdMgisbzHe8JitSMfjMF5014+AAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAJtJREFUGNN1UUkWxSAIw9kOYtXe/6wNtn39iw8LDREJA9E0Y50PwTtr6LOYcngsp/iyyxp+bF0edhNvd6W4XdA2+SixXOffWFniBSeAo70J2wE3oQaocfvkG+KzIYvXCrcP5tEBKghLDmrI1U9RO8FH6DrychCNu7oBiEBPwAWYb5oBC26NVpIokkqBSjtK89qolMFqa9CW9mfFF325CZltH5oAAAAAAElFTkSuQmCC"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="white" fill-opacity="0.8">
+  <path d="M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z"/>
+  <circle cx="12.5" cy="12.5" r="4.5"/>
 </svg>

@@ -1,8 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="20" viewBox="0 0 24 20">
-    <defs>
-        <style>
-            .cls-1{opacity:.8}
-        </style>
-    </defs>
-    <image id="checkbox-on" class="cls-1" width="24" height="20" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAMAAACgaw2xAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAolBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAEkFCQAAAANXRSTlMAGJrMogScrJQdAnossgEFhcEupo7FVgiRVD+Yy3ltykl8DAdxochIPmJmTTxgNVExWSq8UruF0FQAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAAr0lEQVQY023RbReBMBTA8VuXEIbIc1FIIc/f/7O5d2uodd909v+d7ew0sGysTKMJPA627NK0O263R4B9AeUZDHHkEYyrfULH+ZYBsuPU2DGbc19AAWKp+4rymrsEEWD465stFOBGtAzocrGj+q4AsUcp8YE+yRHSTB8FIUskewpecvqCEtXhjH8Amez+BaoAOfcrmECiugFwu0M96NFg/PYH5rUP5fj4ZDCf9vXm/gFLSw3HJOt7XAAAAABJRU5ErkJggg=="/>
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="23" viewBox="0 0 27 23" fill="white" fill-opacity="0.8">
+  <path d="M7.285 7.486l-2.83 2.83 7.784 7.782L26.17 4.166l-2.827-2.83L12.24 12.44"/>
+  <path d="M21 20c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h16.908L21.493.415C21.05.158 20.545 0 20 0H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3v-9.83l-2 2V20z"/>
 </svg>
