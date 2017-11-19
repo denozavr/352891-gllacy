@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  /*font: font-style font-variant font-weight font-size/line-height font-family;*/
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Roboto", "Calibri", sans-serif;
+  color: #ffffff;
+
+  /*background: bg-image bg-position/bg-size bg-repeat bg-attachment bg-origin bg-clip bg-color;*/
+  background-color: #8aa496;
+}
+
+.site-navigation,
+.catalog-submenu,
+.user-navigation,
+.login-links-list {
+  list-style-type: none;
+}
+
+a {
+  color: #ffffff;
+}
+
+.site-navigation-link {
+  font-size: 16px;
+  line-height: 18px;
+  -webkit-text-decoration-color: rgba(255, 255, 255, 0.2);
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+}
+
+.site-navigation a:hover,
+.site-navigation a:focus {
+  color: #000000;
+  text-decoration: none;
+  background-color: #ffffff;
+}
+
+.catalog-submenu a {
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.catalog-submenu a:hover {
+  color: #000000;
+  background-color: #fbded7;
+}
+
+.catalog-submenu a:focus {
+  color: #000000;
+  background-color: #f6b5a5;
+}
+
+.catalog-submenu li:not(:first-child) {
+  font-weight: 400;
+}
+
+.login-link,
+.basket-empty {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+}
+
+.login-item button {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.login-links-list a {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.header-contact-info {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.header-phone {
+  font-size: 22px;
+  line-height: 24px;
+}
+
