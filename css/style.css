@@ -1,16 +1,37 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   padding: 0;
-
   /*font: font-style font-variant font-weight font-size/line-height font-family;*/
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
   font-family: "Roboto", "Calibri", sans-serif;
   color: #ffffff;
-
   /*background: bg-image bg-position/bg-size bg-repeat bg-attachment bg-origin bg-clip bg-color;*/
   background-color: #8aa496;
+}
+
+.visuallyhidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .site-navigation,
