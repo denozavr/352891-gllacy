@@ -38,7 +38,7 @@ body {
 .catalog-submenu,
 .user-navigation,
 .login-links-list {
-  list-style-type: none;
+  list-style: none;
 }
 
 a {
@@ -172,7 +172,7 @@ a {
 }
 
 .bestsellers-list {
-  list-style-type: none;
+  list-style: none;
 }
 
 .price {
@@ -221,7 +221,7 @@ a {
 
 .features-list {
   font-weight: 400;
-  list-style-type: none;
+  list-style: none;
 }
 
 .blog-post {
@@ -241,6 +241,16 @@ a {
 .subscription {
   font-weight: 400;
   color: #5a5a5a;
+
+  background-color: #f8f7f4;
+  border: 5px solid rgba(0, 0, 0, 0.4);
+  border-image-source: url("../img/svg/bg-post.svg");
+  border-image-slice: 10;
+  border-image-repeat: round;
+}
+
+.contacts {
+  background-color: #fffffe;
 }
 
 .contacts p {
@@ -264,10 +274,11 @@ a {
   text-decoration: none;
 }
 
-.footer-links-list {
+.footer-links-list,
+.footer-social-list {
   font-size: 13px;
   line-height: 18px;
-  list-style-type: none;
+  list-style: none;
 }
 
 .footer-links-item:not(:first-child) {
@@ -288,12 +299,5 @@ a {
 }
 
 /*font: font-style font-variant font-weight font-size/line-height font-family;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  font-family: "Roboto", "Calibri", sans-serif;
-  color: #ffffff;
-
   background: bg-image bg-position/bg-size bg-repeat bg-attachment bg-origin bg-clip bg-color;
-  background-color: #8aa496;
 */
