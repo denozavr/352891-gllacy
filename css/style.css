@@ -21,7 +21,7 @@ body {
   background-color: #8aa496;
 }
 
-.visuallyhidden:not(:focus):not(:active) {
+.visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -45,10 +45,26 @@ a {
   color: #ffffff;
 }
 
+.button {
+  width: 139px;
+  height: 44px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  font-family: "Roboto", "Calibri", sans-serif;
+  color: #ffffff;
+
+  background-image: linear-gradient(90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
+  box-shadow: 0 2px 2px 0 rgba(172, 16, 0, 0.64);
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+  border: 0;
+  border-radius: 25px;
+}
+
 .site-navigation-link {
   font-size: 16px;
   line-height: 18px;
-  -webkit-text-decoration-color: rgba(255, 255, 255, 0.2);
   text-decoration-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -88,11 +104,6 @@ a {
   text-decoration: none;
 }
 
-.login-item button {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .login-links-list a {
   font-weight: 400;
   font-size: 13px;
@@ -110,3 +121,179 @@ a {
   line-height: 24px;
 }
 
+/* Main area */
+.slide-title {
+  font-size: 60px;
+  line-height: 60.35px;
+}
+
+.button-slide {
+  width: 278px;
+  height: 63px;
+
+  font-size: 32px;
+  line-height: 44px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.promotion h3 {
+  font-size: 35px;
+  line-height: 41px;
+}
+
+.promotion-raspberry {
+  background-color: #a52644;
+  background-image: url("../img/bg-raspberry.jpg");
+}
+
+.promotion-chocolate {
+  background-color: #492f23;
+  background-image: url("../img/bg-chocolate.jpg");
+}
+
+.promotion p {
+  font-size: 18px;
+}
+
+.promotion .button {
+  line-height: 24px;
+}
+
+.button-promotion-raspberry,
+.button-promotion-chocolate {
+  display: block;
+  width: 189px;
+  height: 45px;
+  padding: 10px 0;
+
+  text-align: center;
+  text-decoration: none;
+}
+
+.bestsellers-list {
+  list-style-type: none;
+}
+
+.price {
+  font-size: 45px;
+  line-height: 45px;
+  text-align: left;
+  text-shadow: 0 1px 3px rgba(49, 50, 53, 0.5);
+}
+
+.weight {
+  text-transform: lowercase;
+}
+
+.bestsellers-item h3 {
+  text-align: center;
+}
+
+.bestsellers-item a {
+  /*background: bg-image bg-position/bg-size bg-repeat bg-attachment bg-origin bg-clip bg-color;*/
+  text-decoration: none;
+
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  background-position: 0 21px;
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+}
+
+/*font: font-style font-variant font-weight font-size/line-height font-family;*/
+.features,
+.blog-post,
+.blog-post a,
+.location {
+  color: #323232;
+}
+
+.features {
+  background-color: #ebdfc4;
+  background-image: url("../img/bg-wafer.jpg");
+}
+
+.features-heading {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+
+.features-list {
+  font-weight: 400;
+  list-style-type: none;
+}
+
+.blog-post {
+  background-color: #ffffff;
+  background-image: url("../img/bg-strawberry.jpg");
+}
+
+.blog-post p {
+  font-weight: 500;
+}
+
+.blog-post-title {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.subscription {
+  font-weight: 400;
+  color: #5a5a5a;
+}
+
+.contacts p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.contacts b {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.button-contacts {
+  display: block;
+  width: 251px;
+  height: 43px;
+  padding: 7px 0;
+
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer-links-list {
+  font-size: 13px;
+  line-height: 18px;
+  list-style-type: none;
+}
+
+.footer-links-item:not(:first-child) {
+  font-weight: 400;
+}
+
+.footer-copyright {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.modal-contacts h2 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #323232;
+}
+
+/*font: font-style font-variant font-weight font-size/line-height font-family;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Roboto", "Calibri", sans-serif;
+  color: #ffffff;
+
+  background: bg-image bg-position/bg-size bg-repeat bg-attachment bg-origin bg-clip bg-color;
+  background-color: #8aa496;
+*/
