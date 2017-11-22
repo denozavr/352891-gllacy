@@ -76,6 +76,7 @@ a {
   box-shadow: inset 1px 1px 5px #1e181c, inset 0 2px 2px 0 rgba(148, 39, 24, 0.004);
 }
 
+/* probably should just make border-bottom using ::after */
 .site-navigation-link:not(.active) {
   font-size: 16px;
   line-height: 18px;
@@ -84,6 +85,15 @@ a {
   background-position: 0 17px;
   background-size: 1px 1px;
   background-repeat: repeat-x;
+}
+
+.site-navigation-link:hover {
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+.site-navigation-link:active {
+  box-shadow: inset 1px 1px 5px #1e181c, inset 0 2px 2px 0 rgba(148, 39, 24, 0.004);
 }
 
 .site-navigation a:hover,
@@ -95,11 +105,11 @@ a {
 
 .site-navigation-link.active {
   display: inline-block;
-  width: 87px;
-  height: 32px;
-  padding: 6px 0;
+  /* width: 87px;
+  height: 32px; */
+  padding: 8px 14px;
 
-
+  line-height: 18px;
   text-decoration: none;
   text-align: center;
   color: #ffffff;
@@ -115,6 +125,11 @@ a {
   color: #000000;
 }
 
+.catalog-submenu a.active {
+  color: #ffffff;
+  background-color: #d07058;
+}
+
 .catalog-submenu a:hover {
   color: #000000;
   background-color: #fbded7;
@@ -127,6 +142,28 @@ a {
 
 .catalog-submenu li:not(:first-child) {
   font-weight: 400;
+}
+
+.search-icon {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+}
+
+.search-icon,
+.login-link,
+.basket-empty {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.search-icon:hover,
+.search-icon:focus,
+.login-link:hover,
+.login-link:focus,
+.basket-empty:hover,
+.basket-empty:focus {
+  color: #000000;
+  background-color: rgb(248, 247, 244);
 }
 
 .login-link,
@@ -144,6 +181,17 @@ a {
   line-height: 24px;
   text-decoration: underline;
   color: #000000;
+}
+
+.search-form,
+.login-form {
+  background-color: #f8f7f4;
+}
+
+.login-form a:hover,
+.login-form a:focus,
+.login-form a:active {
+  color: #e84d37;
 }
 
 li[class$="-item"] > a {
@@ -192,7 +240,7 @@ li[class$="-item"] > a {
   line-height: 16px;
 }
 
-input,
+input:not([type="checkbox"]):not([type="radio"]),
 textarea {
   padding-left: 14px;
   font: inherit;
@@ -205,12 +253,12 @@ textarea {
   border-radius: 5px;
 }
 
-input:hover,
+input:not([type="checkbox"]):not([type="radio"]):hover,
 textarea:hover {
   border: 2px solid rgb(154, 154, 154);
 }
 
-input:focus,
+input:not([type="checkbox"]):not([type="radio"]):focus,
 textarea:focus {
   outline: none;
   border-color: transparent;
@@ -302,7 +350,7 @@ input:not([value=""]):not(:focus) {
 .catalog-item h3 {
   font-weight: 500;
   font-size: 16px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .bestsellers-item a,
@@ -315,12 +363,35 @@ input:not([value=""]):not(:focus) {
   background-repeat: repeat-x;
 }
 
-/*font: font-style font-variant font-weight font-size/line-height font-family;*/
+.bestsellers-item a:hover,
+.bestsellers-item a:focus,
+.bestsellers-item a:active,
+.catalog-item a:hover,
+.catalog-item a:focus,
+.catalog-item a:active {
+  color: #ffbc9e;
+  background-image: linear-gradient(to top, rgba(255, 188, 188, 0.2), rgba(255, 188, 188, 0.2));
+}
+
+.bestsellers-item:hover,
+.catalog-item:hover {
+  /* background-color: #9db1a5; */
+  background-color: rgba(248, 247, 244, 0.2);
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.4);/*from Photoshop was 0 20px 20px 0*/
+  border-radius: 5px;
+}
+
 .features,
 .blog-post,
 .blog-post a,
 .location {
   color: #323232;
+}
+
+.blog-post a:hover,
+.blog-post a:focus,
+.blog-post a:active {
+  color: #e84d37;
 }
 
 .features {
@@ -402,6 +473,21 @@ input:not([value=""]):not(:focus) {
   list-style: none;
 }
 
+.breadcrumb-item {
+  display: inline-block;
+}
+
+.breadcrumb-item a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.breadcrumb-item a:hover,
+.breadcrumb-item a:focus,
+.breadcrumb-item a:active {
+  color: #ffbc9e;
+  border-color: rgba(255, 188, 188, 0.2);
+}
+
 .catalog-heading {
   font-size: 35px;
   line-height: 41px;
@@ -421,6 +507,8 @@ input[id^="filter-"] + label {
   font-weight: 500;
   line-height: 18px;
 }
+
+/* input hover,focus opacity 1, disabled 0.5, normal 0.8 */
 
 .button-filter-submit {
   font-size: 16px;
@@ -459,19 +547,15 @@ input[id^="filter-"] + label {
   list-style: none;
 }
 
-.pagination li {
+.pagination a {
   display: inline-block;
   width: 25px;
   height: 25px;
+  padding: 4px 7px;
+
   font-size: 16px;
   line-height: 18px;
   border-radius: 50%;
-}
-
-.pagination a:active,
-.pagination .active {
-  color: #323232;
-  background-color: rgb(255, 255, 255);
 }
 
 .pagination a:hover,
@@ -479,6 +563,15 @@ input[id^="filter-"] + label {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.2);
 }
+
+.pagination a:active,
+.pagination .active,
+.pagination .active:hover,
+.pagination .active:focus {
+  color: #323232;
+  background-color: rgb(255, 255, 255);
+}
+
 
 /*Footer*/
 .footer-links-list,
@@ -488,9 +581,20 @@ input[id^="filter-"] + label {
   list-style: none;
 }
 
+/* probably should just make border-bottom using ::after */
 .footer-links-list a,
 .footer-copyright-link {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-links-list a:hover,
+.footer-links-list a:focus,
+.footer-links-list a:active,
+.footer-copyright-link:hover,
+.footer-copyright-link:focus,
+.footer-copyright-link:active {
+  color: #ffbc9e;
+  border-color: rgba(255, 188, 188, 0.2);
 }
 
 .footer-links-item:not(:first-child) {
@@ -501,6 +605,12 @@ input[id^="filter-"] + label {
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
+}
+
+
+/* Modal */
+.modal {
+  background-color: #f8f7f4;
 }
 
 .modal-contacts h2 {
