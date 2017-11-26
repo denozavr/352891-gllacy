@@ -21,6 +21,24 @@ body {
   background-color: #8aa496;
 }
 
+.container {
+  width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 27.6px;
+}
+
+.container.map {
+  padding: 0;
+}
+
+/* TEMP HACK will style popup and modal in the next step */
+.popup,
+.modal,
+.catalog-submenu {
+  display: none;
+}
+
 .visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
@@ -76,19 +94,58 @@ a {
   box-shadow: inset 1px 1px 5px #1e181c, inset 0 2px 2px 0 rgba(148, 39, 24, 0.004);
 }
 
+.main-header .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-wrapper {
+  display: flex;
+}
+
+.main-navigation {
+  display: flex;
+  justify-content: space-between;
+  /* Временно для сетки */
+  min-height: 70px;
+}
+
+.main-navigation ul {
+  margin: 0;
+}
+
+.site-navigation {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.user-navigation {
+  display: flex;
+  width: 267px;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+}
+
 /* probably should just make border-bottom using ::after */
+/* or embrace links in span */
 .site-navigation-link:not(.active) {
   font-size: 16px;
   line-height: 18px;
 
   background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
-  background-position: 0 17px;
+  background-position: 0 27px;
   background-size: 1px 1px;
   background-repeat: repeat-x;
 }
 
+.site-navigation-link {
+  padding: 8px 15px;
+}
+
 .site-navigation-link:hover {
-  padding: 8px 14px;
+  padding: 8px 15px;
   border-radius: 20px;
 }
 
@@ -145,9 +202,27 @@ a {
 }
 
 .search-icon {
-  width: 33px;
-  height: 33px;
+  width: 32px;
+  height: 32px;
+  padding-top: 7px;
+  padding-left: 7px;
   border-radius: 50%;
+}
+
+.login-link {
+  width: 93px;
+  height: 32px;
+  padding-top: 10px;
+  padding-left: 45px;
+  border-radius: 15px;
+}
+
+.basket-empty {
+  width: 117px;
+  height: 32px;
+  padding-top: 10px;
+  padding-left: 45px;
+  border-radius: 15px;
 }
 
 .search-icon,
@@ -236,8 +311,14 @@ li[class$="-item"] > a {
 }
 
 .header-contact-info {
+  width: 168px;
+  align-self: flex-end;
+  margin: 0;
+
   font-size: 14px;
   line-height: 16px;
+  text-indent: 10px;
+  text-align: right;
 }
 
 input:not([type="checkbox"]):not([type="radio"]),
@@ -282,6 +363,11 @@ input:not([value=""]):not(:focus) {
 }
 
 /* Main area index */
+.slider {
+  /* Временно для сетки */
+  min-height: 500px;
+}
+
 .slide-title {
   font-size: 60px;
   line-height: 60.35px;
@@ -297,7 +383,22 @@ input:not([value=""]):not(:focus) {
   color: #ffffff;
 }
 
+.promotion {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  /* Временно для сетки */
+  min-height: 230px;
+}
+
+.promotion div {
+  flex-basis: 560px;
+  padding: 0 20px;
+  border-radius: 20px;
+}
+
 .promotion h3 {
+  margin: 17px 0;
   font-size: 35px;
   line-height: 41px;
 }
@@ -317,6 +418,7 @@ input:not([value=""]):not(:focus) {
 }
 
 .promotion .button {
+  margin-left: auto;
   line-height: 24px;
 }
 
@@ -331,8 +433,21 @@ input:not([value=""]):not(:focus) {
   text-decoration: none;
 }
 
+.bestsellers ul {
+  margin: 0;
+  padding: 0;
+}
+
 .bestsellers-list {
+  display: flex;
+  justify-content: space-between;
   list-style: none;
+  /* Временно для сетки */
+  min-height: 325px;
+}
+
+.bestsellers-item {
+  flex-basis: 267px;
 }
 
 .price {
@@ -395,6 +510,9 @@ input:not([value=""]):not(:focus) {
 }
 
 .features {
+  /* Временно для сетки */
+  min-height: 307px;
+  padding: 30px 20px;
   background-color: #ebdfc4;
   background-image: url("../img/bg-wafer.jpg");
 }
@@ -406,20 +524,51 @@ input:not([value=""]):not(:focus) {
 
 
 .features-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
   font-weight: 400;
   list-style: none;
 }
 
+.features-item {
+  flex-basis: 540px;
+  padding-top: 20px;
+  padding-left: 50px;
+}
+
+.blog-subscription-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+
+  /* Временно для сетки */
+  min-height: 220px;
+}
+
+.blog-subscription-wrapper article {
+  flex-basis: 560px;
+}
+
 .blog-post {
+  padding-left: 20px;
   background-color: #ffffff;
   background-image: url("../img/bg-strawberry.jpg");
+  border-radius: 15px;
 }
 
 .blog-post p {
+  margin-top: 22px;
+  margin-bottom: 0;
   font-weight: 500;
 }
 
 .blog-post-title {
+  width: 285px;
+  margin-top: 4px;
   font-size: 24px;
   line-height: 30px;
 }
@@ -429,17 +578,41 @@ input:not([value=""]):not(:focus) {
 }
 
 .subscription {
+  padding: 27px 20px;
   font-weight: 400;
   color: #5a5a5a;
 
   background-color: #f8f7f4;
   border: 5px solid rgba(0, 0, 0, 0.4);
   border-image-source: url("../img/svg/bg-post.svg");
-  border-image-slice: 10;
-  border-image-repeat: round;
+  border-image-slice: 7; /*was 10*/
+  /* border-image-repeat: round; */
+  border-radius: 15px;
+}
+
+.subscription p {
+  margin-top: 0;
+  margin-bottom: 38px;
+}
+
+.subscription-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subscription-form input {
+  width: 368px;
+}
+
+.location {
+  margin-top: 40px;
+  /* Временно для сетки */
+  min-height: 432px;
 }
 
 .contacts {
+  width: 302px;
+  padding: 15px 25px 30px;
   background-color: #fffffe;
 }
 
@@ -574,11 +747,43 @@ input[id^="filter-"] + label {
 
 
 /*Footer*/
+.main-footer {
+  min-height: 103px;
+}
+
+.main-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-footer > div {
+  flex-basis: 190px;
+}
+
 .footer-links-list,
 .footer-social-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
   font-size: 13px;
   line-height: 18px;
   list-style: none;
+}
+
+.footer-links-list {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 330px;
+}
+
+.footer-links-list li {
+  flex-basis: 165px;
+}
+
+.footer-links-list li:nth-child(odd) {
+  padding-left: 25px;
 }
 
 /* probably should just make border-bottom using ::after */
@@ -602,11 +807,20 @@ input[id^="filter-"] + label {
 }
 
 .footer-copyright {
+  /* margin-left: auto; */
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
 }
 
+.footer-copyright > a {
+  display: inline-block;
+  padding-top: 18px;
+}
+
+.footer-copyright > p {
+  margin-top: 0;
+}
 
 /* Modal */
 .modal {
