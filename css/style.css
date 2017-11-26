@@ -32,10 +32,11 @@ body {
   padding: 0;
 }
 
-/* TEMP HACK will style popup and modal in the next step */
+/* TEMP HACK will style popup, modal, quick view button in the next step */
 .popup,
 .modal,
-.catalog-submenu {
+.catalog-submenu,
+.hidden-without-hover {
   display: none;
 }
 
@@ -96,7 +97,8 @@ a {
 
 .main-header .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .header-wrapper {
@@ -106,6 +108,7 @@ a {
 .main-navigation {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   /* Временно для сетки */
   min-height: 70px;
 }
@@ -313,7 +316,9 @@ li[class$="-item"] > a {
 .header-contact-info {
   width: 168px;
   align-self: flex-end;
+  order: 2;
   margin: 0;
+  margin-left: auto;
 
   font-size: 14px;
   line-height: 16px;
@@ -433,20 +438,25 @@ input:not([value=""]):not(:focus) {
   text-decoration: none;
 }
 
-.bestsellers ul {
+.bestsellers ul,
+.catalog-list {
   margin: 0;
   padding: 0;
 }
 
-.bestsellers-list {
+.bestsellers-list,
+.catalog-list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   list-style: none;
   /* Временно для сетки */
   min-height: 325px;
 }
 
-.bestsellers-item {
+
+.bestsellers-item,
+.catalog-item {
   flex-basis: 267px;
 }
 
@@ -640,6 +650,13 @@ input:not([value=""]):not(:focus) {
 
 /* Main area catalog */
 .breadcrumb {
+  display: flex;
+  width: 219px;
+  justify-content: space-between;
+  align-self: flex-end;
+  order: 1;
+  margin: 0;
+  padding: 0;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
@@ -662,8 +679,16 @@ input:not([value=""]):not(:focus) {
 }
 
 .catalog-heading {
+  margin: 5px 0 25px 0;
   font-size: 35px;
   line-height: 41px;
+}
+
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 860px;
+  min-height: 130px;
 }
 
 .filter-form fieldset {
@@ -717,6 +742,15 @@ input[id^="filter-"] + label {
 }
 
 .pagination {
+  display: flex;
+  width: 190px;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  margin-top: 65px;
+  margin-left: auto;
+  margin-bottom: 30px;
+
   list-style: none;
 }
 
@@ -743,6 +777,13 @@ input[id^="filter-"] + label {
 .pagination .active:focus {
   color: #323232;
   background-color: rgb(255, 255, 255);
+}
+
+.catalog-endline {
+  height: 1px;
+  margin: 0;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 
