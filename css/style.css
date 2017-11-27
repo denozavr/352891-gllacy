@@ -40,7 +40,8 @@ body {
   display: none;
 }
 
-.visually-hidden:not(:focus):not(:active) {
+/* :not(:focus):not(:active) delete because slider input on the top becomes visible */
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -103,6 +104,10 @@ a {
 
 .header-wrapper {
   display: flex;
+}
+
+.main-header-logo {
+  padding-top: 10px;
 }
 
 .main-navigation {
@@ -361,21 +366,57 @@ input:not([value=""]):not(:focus) {
   font-size: 14px;
 }
 
-
 .header-phone {
   font-size: 22px;
   line-height: 24px;
 }
 
 /* Main area index */
+.site-wrapper {
+  min-width: 940px;
+  background-color: #849d8f;
+  background-image: url("../img/bg-slide-ice-cream-1.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  /* transition: background-image 0.5s ease, background-color 0.5s ease; */
+}
+
+/* preload 2nd and 3rd slides to avoid "jumping images issue" */
+.site-wrapper::before,
+.site-wrapper::after {
+  content: "";
+  visibility: hidden;
+}
+
+.site-wrapper::before {
+  background-image: url("img/slider-item2.png");
+}
+
+.site-wrapper::after {
+  background-image: url("img/slider-item3.png");
+}
+
 .slider {
   /* Временно для сетки */
-  min-height: 500px;
+  /* min-height: 500px; */
+  position: relative;
+  padding-top: 272px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.slide {
+  display: none;
 }
 
 .slide-title {
+  width: 700px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+
   font-size: 60px;
   line-height: 60.35px;
+  font-weight: 800;
 }
 
 .button-slide {
@@ -384,9 +425,61 @@ input:not([value=""]):not(:focus) {
 
   font-size: 32px;
   line-height: 44px;
-  text-transform: uppercase;
   color: #ffffff;
+  cursor: pointer;
 }
+
+.slider-controls {
+  position: absolute;
+  bottom: 23px;
+  left: 0;
+  z-index: 20;
+
+  font-size: 0;
+}
+
+
+#product1:checked ~ .site-wrapper {
+  background-color: #849d8f;
+  background-image: url("../img/bg-slide-ice-cream-1.png");
+}
+
+#product2:checked ~ .site-wrapper {
+  background-color: #8996a6;
+  background-image: url("../img/bg-slide-ice-cream-2.png");
+}
+
+#product3:checked ~ .site-wrapper {
+  background-color: #9d8b84;
+  background-image: url("../img/bg-slide-ice-cream-3.png");
+}
+
+#product1:checked ~ .site-wrapper #slide1,
+#product2:checked ~ .site-wrapper #slide2,
+#product3:checked ~ .site-wrapper #slide3 {
+  display: block;
+}
+
+#product1:checked ~ .site-wrapper label[for="product1"],
+#product2:checked ~ .site-wrapper label[for="product2"],
+#product3:checked ~ .site-wrapper label[for="product3"] {
+  background-color: #ffffff;
+}
+
+.slider-controls label {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  margin-right: 8px;
+
+  vertical-align: top;
+
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 
 .promotion {
   display: flex;
