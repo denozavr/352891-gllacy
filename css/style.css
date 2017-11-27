@@ -138,21 +138,27 @@ a {
 
 /* probably should just make border-bottom using ::after */
 /* or embrace links in span */
-.site-navigation-link:not(.active) {
+.site-navigation-link {
+  padding: 8px 15px;
   font-size: 16px;
   line-height: 18px;
+}
 
+.site-navigation-link span:not(.no-underline) {
   background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
-  background-position: 0 27px;
+  background-position: 0 18px;
   background-size: 1px 1px;
   background-repeat: repeat-x;
 }
 
-.site-navigation-link {
-  padding: 8px 15px;
+.nav-link-underline:hover,
+.nav-link-underline:focus,
+.nav-link-underline:active, {
+  background-image: none;
 }
 
-.site-navigation-link:hover {
+.site-navigation-link:hover,
+.site-navigation-link:focus {
   padding: 8px 15px;
   border-radius: 20px;
 }
@@ -217,18 +223,36 @@ a {
   border-radius: 50%;
 }
 
+.search-icon:hover path {
+  fill: #000000;
+}
+
 .login-link {
+  position: relative;
   width: 93px;
   height: 32px;
-  padding-top: 10px;
+  padding-top: 7px;
   padding-left: 45px;
   border-radius: 15px;
 }
 
+.login-link svg,
+.basket-empty svg {
+  position: absolute;
+  left: 18px;
+  bottom: 8px;
+}
+
+.login-link:hover path,
+.basket-empty:hover g {
+  fill: #000000;
+}
+
 .basket-empty {
+  position: relative;
   width: 117px;
   height: 32px;
-  padding-top: 10px;
+  padding-top: 7px;
   padding-left: 45px;
   border-radius: 15px;
 }
@@ -282,14 +306,28 @@ li[class$="-item"] > a {
 }
 
 .basket-not-empty {
+  position: relative;
   width: 117px;
   height: 32px;
-  padding: 8px 0;
+  padding-top: 6px;
+  padding-left: 27px;
 
   text-align: center;
   color: #000000;
   background-color: #ffffff;
   border-radius: 15px;
+}
+
+.basket-not-empty::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 16px;
+  height: 22px;
+  width: 22px;
+
+  background-image: url("../img/svg/basket-not-empty.svg");
+  background-repeat: no-repeat;
 }
 
 .basket-form {
@@ -537,6 +575,11 @@ input:not([value=""]):not(:focus) {
   padding: 0;
 }
 
+.bestsellers-item img,
+.catalog-item img {
+  border-radius: 50%;
+}
+
 .bestsellers-list,
 .catalog-list {
   display: flex;
@@ -618,6 +661,7 @@ input:not([value=""]):not(:focus) {
   padding: 30px 20px;
   background-color: #ebdfc4;
   background-image: url("../img/bg-wafer.jpg");
+  border-radius: 15px;
 }
 
 .features-heading {
@@ -713,10 +757,18 @@ input:not([value=""]):not(:focus) {
   min-height: 432px;
 }
 
+.location-map {
+  position: relative;
+}
+
 .contacts {
+  position: absolute;
+  top: 64px;
+  right: 27px;
   width: 302px;
   padding: 15px 25px 30px;
   background-color: #fffffe;
+  border-radius: 15px;
 }
 
 .contacts p {
@@ -898,6 +950,7 @@ input[id^="filter-"] + label {
 .footer-links-list,
 .footer-social-list {
   display: flex;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
 
@@ -907,9 +960,29 @@ input[id^="filter-"] + label {
 }
 
 .footer-links-list {
-  justify-content: space-between;
   flex-wrap: wrap;
   width: 330px;
+}
+
+.footer-social-list li {
+  width: 36.4px;
+  height: 36.4px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+.social-button svg {
+  opacity: 0.8;
+}
+
+.social-button:hover svg {
+  opacity: 1;
+}
+
+.social-button:focus path,
+.social-button:active path {
+  opacity: 0.8;
+  fill: #e9e9e9;
 }
 
 .footer-links-list li {
