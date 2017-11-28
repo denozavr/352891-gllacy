@@ -35,7 +35,6 @@ body {
 /* TEMP HACK will style popup, modal, quick view button in the next step */
 .popup,
 .modal,
-.catalog-submenu,
 .hidden-without-hover {
   display: none;
 }
@@ -189,7 +188,49 @@ a {
   border-radius: 15px;
 }
 
+.site-navigation li {
+  position: relative;
+}
+
+.site-navigation .catalog-submenu {
+  position: absolute;
+  left: -10007px;
+  top: 33px;
+  z-index: 5;  /*fix bug when cannot hover all menu items*/
+  /* Make menu accessible from keyaboard */
+  /* display: none;  */
+  width: 143px;
+  min-height: 171px;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  background-color: #f8f7f4;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+.catalog-submenu li:not(:first-child) { /*was nth-child(2)*/
+  padding-top: 6px;
+  font-weight: 400;
+}
+
+.site-navigation-catalog:hover + .catalog-submenu,
+.site-navigation-catalog:focus + .catalog-submenu,
+.catalog-submenu:hover {
+  display: block;
+  left: -7px;
+}
+
 .catalog-submenu a {
+  display: inline-block;
+  width: 100%;
+  /* Hover the whole area  */
+  /* padding: 5px 0 12px; */
+  /* Hover just 10px above and 12 below like in PSD  */
+  padding: 4px 0 7px;
+  padding-left: 22px;
+
   font-size: 14px;
   line-height: 16px;
   text-decoration: none;
@@ -211,8 +252,33 @@ a {
   background-color: #f6b5a5;
 }
 
-.catalog-submenu li:not(:first-child) {
-  font-weight: 400;
+a.catalog-submenu-first {
+  position: relative;
+  padding-top: 9px;
+  padding-bottom: 8px; /*was 10*/
+  border-radius: 5px 5px 0 0;
+}
+
+.catalog-submenu-last {
+  border-radius: 0 0 5px 5px;
+}
+
+.catalog-submenu-first::after {
+  position: absolute;
+  top: 30px;
+  right: 8px;
+  display: block;
+  content: "";
+  width: 130px;
+  /* height: 1px; */
+  height: 13px;
+  background: linear-gradient(transparent 6px, rgba(204, 204, 204, 0.7) 6px);
+  background-size: 100% 7px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  /* background-color: #f8f7f4; */
+  /* background-color: rgb(204, 204, 204);
+  opacity: 0.2; */
 }
 
 .search-icon {
@@ -223,7 +289,9 @@ a {
   border-radius: 50%;
 }
 
-.search-icon:hover path {
+.search-icon:hover path,
+.search-icon:focus path,
+.search-icon:active path {
   fill: #000000;
 }
 
@@ -244,7 +312,11 @@ a {
 }
 
 .login-link:hover path,
-.basket-empty:hover g {
+.login-link:focus path,
+.login-link:active path,
+.basket-empty:hover g,
+.basket-empty:focus g,
+.basket-empty:active g {
   fill: #000000;
 }
 
