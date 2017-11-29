@@ -21,6 +21,16 @@ body {
   background-color: #8aa496;
 }
 
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .container {
   width: 1200px;
   max-width: 1200px;
@@ -40,7 +50,9 @@ body {
 }
 
 /* :not(:focus):not(:active) delete because slider input on the top becomes visible */
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -58,11 +70,6 @@ body {
 .user-navigation,
 .login-links-list {
   list-style: none;
-}
-
-a {
-  color: #ffffff;
-  text-decoration: none;
 }
 
 .button {
@@ -115,6 +122,7 @@ a {
   width: 100%;
   /* Временно для сетки */
   min-height: 70px;
+  /* height: 73px; for future pixel perfect */
 }
 
 .main-navigation ul {
@@ -627,6 +635,7 @@ input:not([value=""]):not(:focus) {
 
 .promotion .button {
   margin-left: auto;
+  margin-top: 40px;
   line-height: 24px;
 }
 
@@ -639,6 +648,11 @@ input:not([value=""]):not(:focus) {
 
   text-align: center;
   text-decoration: none;
+}
+
+.button-promotion-raspberry {
+  width: 166px;
+  padding-right: 4px;
 }
 
 .bestsellers ul,
@@ -665,10 +679,27 @@ input:not([value=""]):not(:focus) {
 
 .bestsellers-item,
 .catalog-item {
+  margin-top: 39px; /*for index*/
   flex-basis: 267px;
 }
 
+.bestsellers-item p {
+  margin: 0;
+  position: relative;
+}
+
+.bestsellers-item p::before {
+  content: "";
+  position: absolute;
+  height: 60px;
+  width: 61px;
+  background-image: url("../img/svg/hit.svg");
+}
+
 .price {
+  position: absolute;
+  bottom: 12px;
+
   font-size: 45px;
   line-height: 45px;
   text-align: left;
@@ -676,14 +707,30 @@ input:not([value=""]):not(:focus) {
 }
 
 .weight {
+  display: inline-block;
+  font-size: 28px;
+  text-indent: 36px;
   text-transform: lowercase;
 }
 
+small.weight::before {
+  content: "";
+  position: absolute;
+  left: 80px;
+  bottom: 8px;
+  height: 37px;
+  width: 32px;
+  background-image: url("../img/svg/Rub.svg");
+}
+
+
 .bestsellers-item h3,
 .catalog-item h3 {
+  margin-top: 8px;
+  margin-bottom: 0;
   font-weight: 500;
   font-size: 16px;
-  /* text-align: center; */
+  text-align: center;
 }
 
 .bestsellers-item a,
@@ -730,6 +777,7 @@ input:not([value=""]):not(:focus) {
 .features {
   /* Временно для сетки */
   min-height: 307px;
+  margin-top: 38px;
   padding: 30px 20px;
   background-color: #ebdfc4;
   background-image: url("../img/bg-wafer.jpg");
