@@ -778,7 +778,7 @@ small.weight::before {
   /* Временно для сетки */
   min-height: 307px;
   margin-top: 38px;
-  padding: 30px 20px;
+  padding: 26px 20px;
   background-color: #ebdfc4;
   background-image: url("../img/bg-wafer.jpg");
   border-radius: 15px;
@@ -787,6 +787,7 @@ small.weight::before {
 .features-heading {
   font-size: 24px;
   line-height: 30px;
+  word-spacing: 1.1px; /*try pixel perfect */
 }
 
 
@@ -802,9 +803,36 @@ small.weight::before {
 }
 
 .features-item {
+  position: relative;
   flex-basis: 540px;
-  padding-top: 20px;
-  padding-left: 50px;
+  padding-top: 22px;
+  padding-right: 2px;
+  padding-left: 56px;
+}
+
+.features-item::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 49px;
+  width: 49px;
+}
+
+.features-item.ice::before {
+  background-image: url("../img/svg/ice-cream.svg");
+}
+
+.features-item.cow::before {
+  background-image: url("../img/svg/cow.svg");
+}
+
+.features-item.leaf::before {
+  background-image: url("../img/svg/leaf.svg");
+}
+
+.features-item.thermometer::before {
+  background-image: url("../img/svg/thermo.svg");
 }
 
 .blog-subscription-wrapper {
@@ -835,7 +863,7 @@ small.weight::before {
 
 .blog-post-title {
   width: 285px;
-  margin-top: 4px;
+  margin-top: 5px;
   font-size: 24px;
   line-height: 30px;
 }
@@ -845,7 +873,7 @@ small.weight::before {
 }
 
 .subscription {
-  padding: 27px 20px;
+  padding: 29px 22px;
   font-weight: 400;
   color: #5a5a5a;
 
@@ -859,7 +887,7 @@ small.weight::before {
 
 .subscription p {
   margin-top: 0;
-  margin-bottom: 38px;
+  margin-bottom: 35px;
 }
 
 .subscription-form {
@@ -869,6 +897,10 @@ small.weight::before {
 
 .subscription-form input {
   width: 368px;
+}
+
+.subscription-form button {
+  width: 127px;
 }
 
 .location {
@@ -883,10 +915,11 @@ small.weight::before {
 
 .contacts {
   position: absolute;
-  top: 64px;
+  top: 62px;
   right: 27px;
   width: 302px;
-  padding: 15px 25px 30px;
+  height: 305px;
+  padding: 14px 25px 30px;
   background-color: #fffffe;
   border-radius: 15px;
 }
@@ -897,9 +930,24 @@ small.weight::before {
   line-height: 20px;
 }
 
+.contacts p:last-of-type {
+  margin-top: 19px;
+  margin-bottom: 25px;
+}
+
 .contacts b {
   font-size: 18px;
   line-height: 24px;
+}
+
+.contacts-address,
+.contacts-phone,
+.contacts-new-line {
+  display: block;
+}
+
+.contacts-phone {
+  margin-top: 5px;
 }
 
 .button-contacts {
@@ -1055,6 +1103,7 @@ input[id^="filter-"] + label {
 /*Footer*/
 .main-footer {
   min-height: 103px;
+  margin-top: 12px;
 }
 
 .main-footer .container {
@@ -1063,8 +1112,12 @@ input[id^="filter-"] + label {
   justify-content: space-between;
 }
 
-.container-footer > div {
+/* .container-footer > div {
   flex-basis: 190px;
+} */
+
+.footer-social {
+  flex-basis: 185px;
 }
 
 .footer-links-list,
@@ -1081,6 +1134,7 @@ input[id^="filter-"] + label {
 
 .footer-links-list {
   flex-wrap: wrap;
+  justify-content: space-around;
   width: 330px;
 }
 
@@ -1110,11 +1164,28 @@ input[id^="filter-"] + label {
 }
 
 .footer-links-list li:nth-child(odd) {
-  padding-left: 25px;
+  padding-left: 10px;
+  flex-basis: 140px;
+  padding-bottom: 4px;
+}
+
+.footer-links-item.heart {
+  position: relative;
+}
+
+.footer-links-item.heart svg {
+  position: absolute;
+  top: 2px;
+  left: -12px;
+}
+
+.footer-links-item.heart:hover path {
+  fill: #ffbc9e;
 }
 
 /* probably should just make border-bottom using ::after */
-.footer-links-list a,
+.footer-links-item:not(.heart) a,
+.footer-links-item span,
 .footer-copyright-link {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -1122,6 +1193,8 @@ input[id^="filter-"] + label {
 .footer-links-list a:hover,
 .footer-links-list a:focus,
 .footer-links-list a:active,
+.footer-links-item span:hover,
+.footer-links-item span:focus,
 .footer-copyright-link:hover,
 .footer-copyright-link:focus,
 .footer-copyright-link:active {
@@ -1142,7 +1215,8 @@ input[id^="filter-"] + label {
 
 .footer-copyright > a {
   display: inline-block;
-  padding-top: 18px;
+  /* padding-top: 12px; */
+  padding-left: 2px;
 }
 
 .footer-copyright > p {
