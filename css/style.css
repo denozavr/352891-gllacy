@@ -72,6 +72,44 @@ input[type="radio"].visually-hidden {
   list-style: none;
 }
 
+input:not([type="checkbox"]):not([type="radio"]),
+textarea {
+  padding-left: 14px;
+  /* font: inherit; */
+  font-weight: 700;
+  line-height: 24px;
+  color: #000000;
+  /* color: #999999; */
+
+  background-color: rgb(255, 255, 255);
+  border: 0;
+  box-shadow: 0 0 0 1px #d3d3d2;
+  border-radius: 5px;
+  outline-offset: 0; /*fix search strange line*/
+}
+
+input:not([type="checkbox"]):not([type="radio"]):hover,
+textarea:hover {
+  box-shadow: 0 0 0 2px #9a9a9a;
+  /* border: 2px solid rgb(154, 154, 154); */
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus,
+textarea:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #8fbdec;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+input::placeholder {
+  font-weight: 400;
+  color: #999999;
+}
+
 .button {
   width: 139px;
   height: 44px;
@@ -540,30 +578,6 @@ li[class$="-item"] > a {
   text-align: right;
 }
 
-input:not([type="checkbox"]):not([type="radio"]),
-textarea {
-  padding-left: 14px;
-  font: inherit;
-  font-weight: 400;
-  line-height: 24px;
-  color: #999999;
-
-  background-color: rgb(255, 255, 255);
-  border: 2px solid transparent;
-  border-radius: 5px;
-}
-
-input:not([type="checkbox"]):not([type="radio"]):hover,
-textarea:hover {
-  border: 2px solid rgb(154, 154, 154);
-}
-
-input:not([type="checkbox"]):not([type="radio"]):focus,
-textarea:focus {
-  outline: none;
-  border-color: transparent;
-  box-shadow: 0 0 0 2px #8fbdec;
-}
 /*
 style later
 input:not([value=""]):not(:focus) {
