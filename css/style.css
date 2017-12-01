@@ -43,7 +43,7 @@ img {
 }
 
 /* TEMP HACK will style popup, modal, quick view button in the next step */
-.popup,
+.popup-basket,
 .modal,
 .hidden-without-hover {
   display: none;
@@ -136,6 +136,7 @@ input[type="radio"].visually-hidden {
 }
 
 .user-navigation {
+  position: relative;
   display: flex;
   width: 267px;
   align-items: center;
@@ -289,6 +290,38 @@ a.catalog-submenu-first {
   opacity: 0.2; */
 }
 
+.popup {
+  position: absolute;
+}
+
+.popup-search {
+  display: none;
+  top: 60px;
+  right: 227px;
+  z-index: 5;
+}
+
+.search-form,
+.login-form,
+.basket-form {
+  border-radius: 6px;
+  background-color: rgb(248, 247, 244);
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.search-form {
+  width: 341px;
+  height: 84px;
+  padding-top: 19px;
+}
+
+.search-form input[type="search"] {
+  display: block;
+  width: 310px;
+  height: 43px;
+  margin: 0 auto;
+}
+
 .search-icon {
   width: 32px;
   height: 32px;
@@ -297,10 +330,68 @@ a.catalog-submenu-first {
   border-radius: 50%;
 }
 
+.search-icon:hover + .popup-search,
+.search-icon:focus + .popup-search,
+.login-link:hover + .popup-login,
+.login-link:focus + .popup-login,
+.popup-search:hover,
+.popup-search:focus,
+.popup-login:hover,
+.popup-login:focus {
+  display: block;
+}
+
 .search-icon:hover path,
 .search-icon:focus path,
 .search-icon:active path {
   fill: #000000;
+}
+
+.popup-login {
+  display: none;
+  right: 124px;
+  top: 58px;
+  z-index: 5;
+}
+
+.login-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 277px;
+  height: 215px;
+  padding-top: 22px;
+  /* margin: auto; */
+  justify-content: space-around;
+}
+
+.login-form p {
+  margin-top: 0;
+  margin-bottom: 0; /*was 5px*/
+}
+
+.login-form input {
+  display: block;
+  width: 238px;
+  height: 42px;
+}
+
+.login-form div {
+  width: 238px;
+  height: 44px;
+  display: flex;
+}
+
+.login-form button {
+  width: 98px;
+}
+
+.login-links-list {
+  padding-left: 21px;
+}
+
+.login-link-item {
+  display: block;
+  height: 20px;
 }
 
 .login-link {
