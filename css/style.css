@@ -864,12 +864,33 @@ small.weight::before {
   background-image: linear-gradient(to top, rgba(255, 188, 188, 0.2), rgba(255, 188, 188, 0.2));
 }
 
-.bestsellers-item:hover,
-.catalog-item:hover {
+.bestsellers-item,
+.catalog-item {
+  position: relative;
+}
+
+.bestsellers-item:hover::after,
+.catalog-item:hover::after {
   /* background-color: #9db1a5; */
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -13px;
+  width: 293px;
+  height: 405px;
   background-color: rgba(248, 247, 244, 0.2);
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.4);/*from Photoshop was 0 20px 20px 0*/
   border-radius: 5px;
+  z-index: 5;
+}
+
+.bestsellers-item:hover button.hidden-without-hover,
+.catalog-item:hover button.hidden-without-hover {
+  display: block;
+  position: absolute;
+  bottom: -50px;
+  left: 34px;
+  z-index: 6;
 }
 
 .features,
