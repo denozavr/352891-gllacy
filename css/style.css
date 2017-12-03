@@ -1191,6 +1191,91 @@ fieldset.filter-fats {
   width: 703px;
 }
 
+.filter-form label {
+  position: relative;
+
+  display: inline-block;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-fats div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.filter-fats label {
+  padding-left: 20px;
+}
+
+.filter-fats label:last-child {
+  padding-right: 2px;
+}
+
+.filter-fillers div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 3px;
+}
+
+.filter-fillers label {
+  padding-left: 20px;
+}
+
+input[name^="filler-"] + label::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -11.5px;
+  top: -1.5px;
+  background-image: url("../img/svg/checkbox-off.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+input[name^="filler-"]:checked + label::before {
+  width: 23px;
+  background-image: url("../img/svg/checkbox-on.svg");
+}
+
+input[name^="filler-"]:first-child + label::before {
+  left: -9px;
+}
+
+
+input[name="fat-percent"] + label::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: -12px;
+  top: -2px;
+  background-image: url("../img/svg/radio-off.svg");
+  background-size: contain;
+}
+
+
+input[name="fat-percent"]:checked + label::before {
+  background-image: url("../img/svg/radio-on.svg");
+}
+
+input[name="fat-percent"] + label:hover::before,
+input[name="fat-percent"]:checked + label:hover::before {
+  opacity: 1;
+}
+
+input[name="fat-percent"]:disabled + label::before,
+input[name="fat-percent"]:checked:disabled + label::before {
+  opacity: 0.4;
+}
+
+
 /* input hover,focus opacity 1, disabled 0.5, normal 0.8 */
 
 .button-filter-submit {
