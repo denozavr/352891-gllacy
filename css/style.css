@@ -1142,15 +1142,28 @@ small.weight::before {
 .filter-form {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between; /*Not-sure*/
   width: 860px;
   min-height: 130px;
 }
 
 .filter-form fieldset {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 15px;
+
   border: none;
 }
 
+fieldset > div {
+  height: 37px;
+  margin-top: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
 .filter-form legend {
+  padding-left: 15px;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
@@ -1161,9 +1174,29 @@ input[id^="filter-"] + label {
   line-height: 18px;
 }
 
+.filter-select {
+  width: 194px;
+}
+
+.filter-price {
+  width: 220px;
+}
+
+fieldset.filter-fats {
+  width: 415px;
+  margin-right: 3px;
+}
+
+.filter-fillers {
+  width: 703px;
+}
+
 /* input hover,focus opacity 1, disabled 0.5, normal 0.8 */
 
 .button-filter-submit {
+  width: 144px;
+  height: 37px;
+  margin-top: 21px;
   font-size: 16px;
   line-height: 18px;
   background-color: rgba(255, 255, 255, 0.188);
