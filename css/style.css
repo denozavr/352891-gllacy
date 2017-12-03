@@ -1155,13 +1155,6 @@ small.weight::before {
   border: none;
 }
 
-fieldset > div {
-  height: 37px;
-  margin-top: 6px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-}
-
 .filter-form legend {
   padding-left: 15px;
   font-weight: 500;
@@ -1169,7 +1162,18 @@ fieldset > div {
   line-height: 16px;
 }
 
+fieldset > div {
+  height: 37px;
+  margin-top: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
 input[id^="filter-"] + label {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
   font-weight: 500;
   line-height: 18px;
 }
@@ -1187,17 +1191,9 @@ fieldset.filter-fats {
   margin-right: 3px;
 }
 
-.filter-fillers {
+fieldset.filter-fillers {
   width: 703px;
-}
-
-.filter-form label {
-  position: relative;
-
-  display: inline-block;
-
-  cursor: pointer;
-  user-select: none;
+  margin-bottom: 2px;
 }
 
 .filter-fats div {
@@ -1213,6 +1209,35 @@ fieldset.filter-fats {
 
 .filter-fats label:last-child {
   padding-right: 2px;
+}
+
+input[name="fat-percent"] + label::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: -12px;
+  top: -2px;
+  background-image: url("../img/svg/radio-off.svg");
+  background-size: contain;
+}
+
+input[name="fat-percent"]:checked + label::before {
+  background-image: url("../img/svg/radio-on.svg");
+}
+
+input[name="fat-percent"] + label:hover::before,
+input[name="fat-percent"]:checked + label:hover::before,
+input[name^="filler-"] + label:hover::before,
+input[name^="filler-"]:checked + label:hover::before {
+  opacity: 1;
+}
+
+input[name="fat-percent"]:disabled + label::before,
+input[name="fat-percent"]:checked:disabled + label::before,
+input[name^="filler-"]:disabled + label::before,
+input[name^="filler-"]:checked:disabled + label::before {
+  opacity: 0.4;
 }
 
 .filter-fillers div {
@@ -1247,34 +1272,6 @@ input[name^="filler-"]:checked + label::before {
 input[name^="filler-"]:first-child + label::before {
   left: -9px;
 }
-
-
-input[name="fat-percent"] + label::before {
-  content: "";
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  left: -12px;
-  top: -2px;
-  background-image: url("../img/svg/radio-off.svg");
-  background-size: contain;
-}
-
-
-input[name="fat-percent"]:checked + label::before {
-  background-image: url("../img/svg/radio-on.svg");
-}
-
-input[name="fat-percent"] + label:hover::before,
-input[name="fat-percent"]:checked + label:hover::before {
-  opacity: 1;
-}
-
-input[name="fat-percent"]:disabled + label::before,
-input[name="fat-percent"]:checked:disabled + label::before {
-  opacity: 0.4;
-}
-
 
 /* input hover,focus opacity 1, disabled 0.5, normal 0.8 */
 
@@ -1317,17 +1314,31 @@ input[name="fat-percent"]:checked:disabled + label::before {
 .pagination {
   display: flex;
   width: 190px;
-  justify-content: space-between;
+  /* justify-content: space-around; */
   margin: 0;
   padding: 0;
-  margin-top: 65px;
+  margin-top: 83px;
   margin-left: auto;
-  margin-bottom: 30px;
+  margin-right: 10px;
+  margin-bottom: 25px;
 
   list-style: none;
 }
 
+.page-item {
+  padding-right: 4px;
+}
+
+.page-item:first-child {
+  padding-right: 9px;
+}
+
+.page-item:last-child {
+  padding-left: 6px;
+}
+
 .pagination a {
+  position: relative;
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -1338,10 +1349,39 @@ input[name="fat-percent"]:checked:disabled + label::before {
   border-radius: 50%;
 }
 
+.pagination .previous::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  bottom: 6px;
+  width: 8px;
+  height: 12px;
+
+  background-image: url("../img/svg/icon-right-small.svg");
+  background-size: cover;
+  transform: rotate(180deg);
+}
+
+.pagination .next {
+  position: absolute;
+}
+
+.next path {
+  fill: white;
+}
+
+
 .pagination a:hover,
 .pagination a:focus {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.pagination a.previous:hover,
+.pagination a.previous:focus,
+.pagination a.next:hover,
+.pagination a.next:focus {
+  background-color: transparent;
 }
 
 .pagination a:active,
@@ -1355,6 +1395,7 @@ input[name="fat-percent"]:checked:disabled + label::before {
 .catalog-endline {
   height: 1px;
   margin: 0;
+  margin-bottom: 19px;
   border: 0;
   background-color: rgba(255, 255, 255, 0.3);
 }
