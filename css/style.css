@@ -44,7 +44,6 @@ img {
 
 /* TEMP HACK will style popup, modal, quick view button in the next step */
 .popup-basket,
-.modal,
 .hidden-without-hover {
   display: none;
 }
@@ -101,11 +100,13 @@ textarea:focus {
   box-shadow: 0 0 0 2px #8fbdec;
 }
 
-input:focus::placeholder {
+input:focus::placeholder,
+textarea:focus::placeholder {
   color: transparent;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   font-weight: 400;
   color: #999999;
 }
@@ -1550,11 +1551,71 @@ input[name^="filler-"]:first-child + label::before {
   background-color: #f8f7f4;
 }
 
+.modal-contacts {
+  position: fixed;
+  top: 339px;
+  left: 50%;
+  display: none;
+  width: 478px;
+  height: 443px;
+  margin-left: -237px;
+  /* padding: 0 20px 25px 20px; */
+  padding-left: 25px;
+  border-radius: 10px;
+}
+
 .modal-contacts h2 {
+  margin-top: 15px;
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
   color: #323232;
+}
+
+.modal-contacts p {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+}
+
+.modal-contacts input {
+  width: 266px;
+  height: 44px;
+}
+
+.modal-contacts textarea {
+  width: 427px;
+  height: 154px;
+  padding-left: 14px;
+  padding-top: 9px;
+}
+
+.modal-contacts .button-submit {
+  display: block;
+  margin-left: auto;
+  margin-right: 25px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+
+  width: 20px;
+  height: 20px;
+
+  font-size: 0;
+
+  background-color: transparent;
+  border: 0;
+  background-image: url("../img/svg/x-big.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 /*font: font-style font-variant font-weight font-size/line-height font-family;
