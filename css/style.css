@@ -43,7 +43,6 @@ img {
 }
 
 /* TEMP HACK will style popup, modal, quick view button in the next step */
-.popup-basket,
 .hidden-without-hover {
   display: none;
 }
@@ -373,10 +372,14 @@ a.catalog-submenu-first {
 .search-icon:focus + .popup-search,
 .login-link:hover + .popup-login,
 .login-link:focus + .popup-login,
+.basket-not-empty:hover + .popup-basket,
+.basket-not-empty:focus + .popup-basket,
 .popup-search:hover,
 .popup-search:focus,
 .popup-login:hover,
-.popup-login:focus {
+.popup-login:focus,
+.popup-basket:hover,
+.popup-basket:focus {
   display: block;
 }
 
@@ -540,30 +543,116 @@ li[class$="-item"] > a {
   background-repeat: no-repeat;
 }
 
+.popup-basket {
+  display: none;
+  top: 58px;
+  right: -1px;
+  z-index: 5;
+}
+
 .basket-form {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  width: 540px;
+  height: 242px;
   background-color: #f8f7f4;
 }
 
+.basket-goods::before {
+  content: "\200C";
+  display: block;
+  line-height: 14px;
+}
+
+tr.empty-row {
+  height: 10px;
+}
+
 .basket-goods {
+  /* position: absolute; top: 20px; */
+  height: 129px;
+  margin-top: -10px;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
-
   color: #000000;
+  border-spacing: 0 16px;
+}
+
+.basket-goods td:first-child {
+  width: 37px;
+}
+
+/* .basket-goods tr:last-child {
+  vertical-align: middle;
+} */
+
+.basket-goods td:nth-child(3) {
+  width: 255px;
+  padding-right: 15px;
+  padding-left: 10px;
+}
+
+.basket-goods td:last-child {
+  padding-left: 24px;
+}
+
+.basket-item-delete {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.basket-item-delete::before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 14px;
+  width: 11px;
+  height: 11px;
+  background-image: url("../img/svg/x-cart.svg");
+  background-size: contain;
 }
 
 .basket-price-for-kilo {
   color: #999999;
 }
 
+.basket-table-endline {
+  height: 1px;
+  margin: 0 16px;
+  margin-top: 18px;
+  margin-bottom: 14px;
+  background-color: #cacac7;
+  border: 0;
+}
+
+.basket-form > p {
+  margin: 0;
+  margin-right: 14px;
+  text-align: right;
+}
+
 .basket-total {
+  display: block;
+  margin-left: auto;
   font-size: 15px;
   line-height: 18px;
   color: #000000;
 }
 
+td.basket-long-title {
+  position: relative;
+  top: 7px;
+}
+
 .basket-form .button {
   width: 170px;
+  align-self: flex-end;
+  margin-top: 13px;
+  margin-right: 15px;
+  /* margin-left: auto; */
 }
 
 .header-contact-info {
