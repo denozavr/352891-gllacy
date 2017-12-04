@@ -753,6 +753,9 @@ input:not([value=""]):not(:focus) {
   font-size: 0;
 }
 
+.slider-controls label:hover {
+  background-color: rgba(248, 247, 244, 0.4);
+}
 
 #product1:checked ~ .site-wrapper {
   background-color: #849d8f;
