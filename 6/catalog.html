@@ -104,22 +104,25 @@
                     </thead>
                     <tbody class="basket-goods">
                       <tr>
-                        <td><a class="basket-item-delete" href="#">Удалить</a></td>
+                        <td><a class="basket-item-delete" href="#"><span class="visually-hidden">Удалить</span></a></td>
                         <td><img src="img/basket-item-1-orange.jpg" width="33" height="33" alt="Пломбир"></td>
                         <td>Пломбир с апельсиновым джемом</td>
                         <td>1,5 кг х <span class="basket-price-for-kilo">200 руб.</span></td>
                         <td>300 руб.</td>
                       </tr>
+                      <tr class="empty-row">
+                        <td></td>
+                      </tr>
                       <tr>
-                        <td><a class="basket-item-delete" href="#">Удалить</a></td>
+                        <td><a class="basket-item-delete" href="#"><span class="visually-hidden">Удалить</span></a></td>
                         <td><img src="img/basket-item-2-strawberry.jpg" width="33" height="33" alt="Клубничный пломбир"></td>
-                        <td>Клубничный пломбир с присыпкой  из белого шоколада</td>
+                        <td class="basket-long-title" >Клубничный пломбир с присыпкой  из белого шоколада</td>
                         <td>1,5 кг х <span class="basket-price-for-kilo">300 руб.</span></td>
                         <td>450 руб.</td>
                       </tr>
                     </tbody>
                   </table>
-
+                  <hr class="basket-table-endline">
                   <p><b class="basket-total">Итого: 750 руб.</b></p>
                   <button class="button button-submit" type="submit">Оформить заказ</button>
                 </form>
@@ -149,12 +152,17 @@
             <fieldset>
               <legend><label for="sorting">Сортировка:</label></legend>
               <div class="filter-select">
-                <select id="sorting" name="sorting">
+                <select id="sorting" class="select-sorting" name="sorting">
                   <option value="popular">по популярности</option>
                   <option value="cheap">сначала недорогие</option>
                   <option value="expensive">сначала дорогие</option>
                   <option value="fat">по жирности</option>
                 </select>
+                <div class="select-arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+                    <path fill="#ffffff" d="M5.5 10L0 0h11"/>
+                  </svg>
+                </div>
               </div>
             </fieldset>
             <fieldset class="filter-price">
@@ -162,6 +170,7 @@
               <div class="filter-range">
                 <div class="range-base">
                   <div class="range-handle-left" tabindex="0"></div>
+                  <div class="range-between-handles"></div>
                   <div class="range-handle-right" tabindex="0"></div>
                 </div>
               </div>

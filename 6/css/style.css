@@ -43,8 +43,6 @@ img {
 }
 
 /* TEMP HACK will style popup, modal, quick view button in the next step */
-.popup-basket,
-.modal,
 .hidden-without-hover {
   display: none;
 }
@@ -101,11 +99,13 @@ textarea:focus {
   box-shadow: 0 0 0 2px #8fbdec;
 }
 
-input:focus::placeholder {
+input:focus::placeholder,
+textarea:focus::placeholder {
   color: transparent;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   font-weight: 400;
   color: #999999;
 }
@@ -372,10 +372,14 @@ a.catalog-submenu-first {
 .search-icon:focus + .popup-search,
 .login-link:hover + .popup-login,
 .login-link:focus + .popup-login,
+.basket-not-empty:hover + .popup-basket,
+.basket-not-empty:focus + .popup-basket,
 .popup-search:hover,
 .popup-search:focus,
 .popup-login:hover,
-.popup-login:focus {
+.popup-login:focus,
+.popup-basket:hover,
+.popup-basket:focus {
   display: block;
 }
 
@@ -539,30 +543,116 @@ li[class$="-item"] > a {
   background-repeat: no-repeat;
 }
 
+.popup-basket {
+  display: none;
+  top: 58px;
+  right: -1px;
+  z-index: 5;
+}
+
 .basket-form {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  width: 540px;
+  height: 242px;
   background-color: #f8f7f4;
 }
 
+.basket-goods::before {
+  content: "\200C";
+  display: block;
+  line-height: 14px;
+}
+
+tr.empty-row {
+  height: 10px;
+}
+
 .basket-goods {
+  /* position: absolute; top: 20px; */
+  height: 129px;
+  margin-top: -10px;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
-
   color: #000000;
+  border-spacing: 0 16px;
+}
+
+.basket-goods td:first-child {
+  width: 37px;
+}
+
+/* .basket-goods tr:last-child {
+  vertical-align: middle;
+} */
+
+.basket-goods td:nth-child(3) {
+  width: 255px;
+  padding-right: 15px;
+  padding-left: 10px;
+}
+
+.basket-goods td:last-child {
+  padding-left: 24px;
+}
+
+.basket-item-delete {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.basket-item-delete::before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 14px;
+  width: 11px;
+  height: 11px;
+  background-image: url("../img/svg/x-cart.svg");
+  background-size: contain;
 }
 
 .basket-price-for-kilo {
   color: #999999;
 }
 
+.basket-table-endline {
+  height: 1px;
+  margin: 0 16px;
+  margin-top: 18px;
+  margin-bottom: 14px;
+  background-color: #cacac7;
+  border: 0;
+}
+
+.basket-form > p {
+  margin: 0;
+  margin-right: 14px;
+  text-align: right;
+}
+
 .basket-total {
+  display: block;
+  margin-left: auto;
   font-size: 15px;
   line-height: 18px;
   color: #000000;
 }
 
+td.basket-long-title {
+  position: relative;
+  top: 7px;
+}
+
 .basket-form .button {
   width: 170px;
+  align-self: flex-end;
+  margin-top: 13px;
+  margin-right: 15px;
+  /* margin-left: auto; */
 }
 
 .header-contact-info {
@@ -1200,11 +1290,82 @@ input[id^="filter-"] + label {
 }
 
 .filter-select {
+  position: relative;
   width: 194px;
 }
 
+.select-sorting {
+  width: 183px;
+  height: 35px;
+  padding: 0;
+  padding-top: 1px;
+  padding-left: 11px;
+  font: inherit;
+  color: white;
+  background: transparent;
+  border: none;
+}
+
+.filter-select .select-arrow {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+}
+
+.select-sorting:hover {
+  color: #000000;
+}
+
+.select-sorting:hover + .select-arrow path {
+  fill: #000000;
+}
+
+
 .filter-price {
   width: 220px;
+}
+
+.filter-range {
+  position: relative;
+}
+
+.range-base {
+  position: absolute;
+  top: 16px;
+  left: 21px;
+  width: 176px;
+  height: 4px;
+  background-color: rgba(248, 247, 244, 0.2);
+}
+
+.range-between-handles {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 81px;
+  height: 4px;
+  background-color: #f8f7f4;
+}
+
+.range-handle-left,
+.range-handle-right {
+  position: absolute;
+  top: -7px;
+  width: 20px;
+  height: 23px;
+  background-image: url("../img/svg/filter-button.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+
+.range-handle-left {
+  left: 13px;
+}
+
+.range-handle-right {
+  right: 44px;
 }
 
 fieldset.filter-fats {
@@ -1550,11 +1711,71 @@ input[name^="filler-"]:first-child + label::before {
   background-color: #f8f7f4;
 }
 
+.modal-contacts {
+  position: fixed;
+  top: 339px;
+  left: 50%;
+  display: none;
+  width: 478px;
+  height: 443px;
+  margin-left: -237px;
+  /* padding: 0 20px 25px 20px; */
+  padding-left: 25px;
+  border-radius: 10px;
+}
+
 .modal-contacts h2 {
+  margin-top: 15px;
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
   color: #323232;
+}
+
+.modal-contacts p {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+}
+
+.modal-contacts input {
+  width: 266px;
+  height: 44px;
+}
+
+.modal-contacts textarea {
+  width: 427px;
+  height: 154px;
+  padding-left: 14px;
+  padding-top: 9px;
+}
+
+.modal-contacts .button-submit {
+  display: block;
+  margin-left: auto;
+  margin-right: 25px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+
+  width: 20px;
+  height: 20px;
+
+  font-size: 0;
+
+  background-color: transparent;
+  border: 0;
+  background-image: url("../img/svg/x-big.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 /*font: font-style font-variant font-weight font-size/line-height font-family;
