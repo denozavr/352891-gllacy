@@ -151,12 +151,17 @@
             <fieldset>
               <legend><label for="sorting">Сортировка:</label></legend>
               <div class="filter-select">
-                <select id="sorting" name="sorting">
+                <select id="sorting" class="select-sorting" name="sorting">
                   <option value="popular">по популярности</option>
                   <option value="cheap">сначала недорогие</option>
                   <option value="expensive">сначала дорогие</option>
                   <option value="fat">по жирности</option>
                 </select>
+                <div class="select-arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+                    <path fill="#ffffff" d="M5.5 10L0 0h11"/>
+                  </svg>
+                </div>
               </div>
             </fieldset>
             <fieldset class="filter-price">
@@ -164,6 +169,7 @@
               <div class="filter-range">
                 <div class="range-base">
                   <div class="range-handle-left" tabindex="0"></div>
+                  <div class="range-between-handles"></div>
                   <div class="range-handle-right" tabindex="0"></div>
                 </div>
               </div>

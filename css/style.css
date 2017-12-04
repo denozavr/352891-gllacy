@@ -1290,11 +1290,82 @@ input[id^="filter-"] + label {
 }
 
 .filter-select {
+  position: relative;
   width: 194px;
 }
 
+.select-sorting {
+  width: 183px;
+  height: 35px;
+  padding: 0;
+  padding-top: 1px;
+  padding-left: 11px;
+  font: inherit;
+  color: white;
+  background: transparent;
+  border: none;
+}
+
+.filter-select .select-arrow {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+}
+
+.select-sorting:hover {
+  color: #000000;
+}
+
+.select-sorting:hover + .select-arrow path {
+  fill: #000000;
+}
+
+
 .filter-price {
   width: 220px;
+}
+
+.filter-range {
+  position: relative;
+}
+
+.range-base {
+  position: absolute;
+  top: 16px;
+  left: 21px;
+  width: 176px;
+  height: 4px;
+  background-color: rgba(248, 247, 244, 0.2);
+}
+
+.range-between-handles {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 81px;
+  height: 4px;
+  background-color: #f8f7f4;
+}
+
+.range-handle-left,
+.range-handle-right {
+  position: absolute;
+  top: -7px;
+  width: 20px;
+  height: 23px;
+  background-image: url("../img/svg/filter-button.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+
+.range-handle-left {
+  left: 13px;
+}
+
+.range-handle-right {
+  right: 44px;
 }
 
 fieldset.filter-fats {
