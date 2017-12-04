@@ -151,13 +151,15 @@ textarea::placeholder {
 }
 
 .main-header-logo {
-  padding-top: 10px;
+  padding-top: 6px;
+  line-height: 15px;
 }
 
 .main-navigation {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding-top: 3px;
   /* Временно для сетки */
   min-height: 70px;
   /* height: 73px; for future pixel perfect */
@@ -185,7 +187,7 @@ textarea::placeholder {
 /* probably should just make border-bottom using ::after */
 /* or embrace links in span */
 .site-navigation-link {
-  padding: 8px 15px;
+  padding: 8px 14px; /* was 8px 15px*/
   font-size: 16px;
   line-height: 18px;
 }
@@ -681,7 +683,7 @@ input:not([value=""]):not(:focus) {
 
 .header-phone {
   font-size: 22px;
-  line-height: 24px;
+  line-height: 30px; /*was 24px changed for pixel perfect*/
 }
 
 /* Main area index */
@@ -809,7 +811,7 @@ input:not([value=""]):not(:focus) {
 }
 
 .promotion h3 {
-  margin: 17px 0;
+  margin: 17px 0 14px;
   font-size: 35px;
   line-height: 41px;
 }
@@ -825,12 +827,13 @@ input:not([value=""]):not(:focus) {
 }
 
 .promotion p {
+  margin: 0;
   font-size: 18px;
 }
 
 .promotion .button {
   margin-left: auto;
-  margin-top: 40px;
+  margin-top: 45px;
   line-height: 24px;
 }
 
