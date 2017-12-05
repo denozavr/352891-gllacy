@@ -1792,3 +1792,20 @@ input[name^="filler-"]:first-child + label::before {
 /*font: font-style font-variant font-weight font-size/line-height font-family;
   background: bg-image bg-position/bg-size bg-repeat bg-attachment bg-origin bg-clip bg-color;
 */
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.5) translate(-100%, 15%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) translate(0%, -50%);
+    opacity: 1;
+  }
+}
+
+.modal-show {
+  display: block;
+  animation: scaleUp 1.5s;
+}
