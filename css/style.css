@@ -576,7 +576,7 @@ tr.empty-row {
 
 .basket-goods {
   /* position: absolute; top: 20px; */
-  height: 129px;
+  /* height: 129px; */
   margin-top: -10px;
   font-weight: 400;
   font-size: 13px;
@@ -808,7 +808,7 @@ td.basket-long-title {
 }
 
 .promotion div {
-  flex-basis: 560px;
+  width: 560px; /*replace flex-basis with div because of IE11 bug*/
   padding: 0 20px;
   border-radius: 20px;
 }
@@ -1034,7 +1034,7 @@ small.weight::before {
 
 .features-item {
   position: relative;
-  flex-basis: 540px;
+  width: 540px; /*replace flex-basis with div because of IE11 bug*/
   padding-top: 22px;
   padding-right: 2px;
   padding-left: 56px;
@@ -1075,7 +1075,7 @@ small.weight::before {
 }
 
 .blog-subscription-wrapper article {
-  flex-basis: 560px;
+  width: 560px; /*replace flex-basis with div because of IE11 bug*/
 }
 
 .blog-post {
