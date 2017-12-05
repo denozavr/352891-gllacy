@@ -201,7 +201,7 @@ textarea::placeholder {
 
 .nav-link-underline:hover,
 .nav-link-underline:focus,
-.nav-link-underline:active, {
+.nav-link-underline:active {
   background-image: none;
 }
 
@@ -231,6 +231,7 @@ textarea::placeholder {
   line-height: 18px;
   text-decoration: none;
   text-align: center;
+  vertical-align: top;
   color: #ffffff;
 
   background-color: #d07058;
@@ -282,6 +283,7 @@ textarea::placeholder {
 
   font-size: 14px;
   line-height: 16px;
+  vertical-align: top;
   text-decoration: none;
   color: #000000;
 }
@@ -336,7 +338,7 @@ a.catalog-submenu-first {
 
 .popup-search {
   display: none;
-  top: 60px;
+  top: 56px;
   right: 227px;
   z-index: 5;
 }
@@ -394,7 +396,7 @@ a.catalog-submenu-first {
 .popup-login {
   display: none;
   right: 124px;
-  top: 58px;
+  top: 56px;
   z-index: 5;
 }
 
@@ -518,6 +520,7 @@ a.catalog-submenu-first {
 
 li[class$="-item"] > a {
   display: inline-block;
+  vertical-align: top;
 }
 
 .basket-not-empty {
@@ -547,7 +550,7 @@ li[class$="-item"] > a {
 
 .popup-basket {
   display: none;
-  top: 58px;
+  top: 55px;
   right: -1px;
   z-index: 5;
 }
@@ -568,7 +571,7 @@ li[class$="-item"] > a {
 }
 
 tr.empty-row {
-  height: 10px;
+  height: 13px;
 }
 
 .basket-goods {
@@ -597,7 +600,7 @@ tr.empty-row {
 }
 
 .basket-goods td:last-child {
-  padding-left: 24px;
+  padding-left: 26px;
 }
 
 .basket-item-delete {
@@ -673,13 +676,6 @@ td.basket-long-title {
   text-indent: 10px;
   text-align: right;
 }
-
-/*
-style later
-input:not([value=""]):not(:focus) {
-  font-weight: bold;
-  color: #000000;
-} */
 
 .user-navigation input {
   font-size: 14px;
@@ -917,10 +913,12 @@ input:not([value=""]):not(:focus) {
 }
 
 .weight {
-  display: inline-block;
+  /* display: inline-block; */
+  padding-left: 36px;
   font-size: 28px;
-  text-indent: 36px;
-  text-transform: lowercase;
+  /* text-indent: 36px; */
+  /* text-transform: lowercase;
+  vertical-align: top; */
 }
 
 small.weight::before {
@@ -1234,7 +1232,7 @@ small.weight::before {
 
 .breadcrumb-item {
   position: relative;
-  display: inline-block;
+  /* display: inline-block;  used FLEX*/
 }
 
 .breadcrumb-item:not(.active)::after {
@@ -1292,7 +1290,7 @@ fieldset > div {
 
 input[id^="filter-"] + label {
   position: relative;
-  display: inline-block;
+  /* display: inline-block; Used FLEX */
   cursor: pointer;
   user-select: none;
   font-weight: 500;
@@ -1512,7 +1510,7 @@ input[name^="filler-"]:first-child + label::before {
   margin-top: 83px;
   margin-left: auto;
   margin-right: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 30px; /*25px; */
 
   list-style: none;
 }
@@ -1531,7 +1529,7 @@ input[name^="filler-"]:first-child + label::before {
 
 .pagination a {
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */ /* rule from "li[class$="-item"] > a" is used */
   width: 25px;
   height: 25px;
   padding: 4px 7px;
@@ -1707,7 +1705,7 @@ input[name^="filler-"]:first-child + label::before {
 }
 
 .footer-copyright > a {
-  display: inline-block;
+  /* display: inline-block; */
   /* padding-top: 12px; */
   padding-left: 2px;
 }
@@ -1723,8 +1721,10 @@ input[name^="filler-"]:first-child + label::before {
 
 .modal-contacts {
   position: fixed;
-  top: 339px;
+  top: 50%;
   left: 50%;
+  transform: translateY(-50%);
+
   display: none;
   width: 478px;
   height: 443px;
@@ -1732,6 +1732,7 @@ input[name^="filler-"]:first-child + label::before {
   /* padding: 0 20px 25px 20px; */
   padding-left: 25px;
   border-radius: 10px;
+  z-index: 10;
 }
 
 .modal-contacts h2 {
