@@ -207,7 +207,7 @@ textarea::placeholder {
 
 .site-navigation-link:hover,
 .site-navigation-link:focus {
-  padding: 6px 15px; /* was 8px 15px */
+  padding: 6px 14px; /* was 8px 15px */
   border-radius: 20px;
 }
 
@@ -628,6 +628,10 @@ tr.empty-row {
   margin-bottom: 14px;
   background-color: #cacac7;
   border: 0;
+}
+
+.basket-form img {
+  border-radius: 50%;
 }
 
 .basket-form > p {
