@@ -265,8 +265,8 @@ textarea::placeholder {
   font-weight: 400;
 }
 
-.site-navigation-catalog:hover + .catalog-submenu,
-.site-navigation-catalog:focus + .catalog-submenu,
+a.site-navigation-catalog:hover + .catalog-submenu,
+a.site-navigation-catalog:focus + .catalog-submenu,
 .catalog-submenu:hover {
   display: block;
   left: -7px;
@@ -1314,6 +1314,14 @@ input[id^="filter-"] + label {
   border: none;
 }
 
+.filter-select select {
+  appearance: none;
+}
+
+.filter-select select::-ms-expand {
+  display: none;
+}
+
 .filter-select .select-arrow {
   position: absolute;
   top: 8px;
@@ -1404,9 +1412,9 @@ fieldset.filter-fillers {
 input[name="fat-percent"] + label::before {
   content: "";
   position: absolute;
-  width: 22px;
-  height: 22px;
-  left: -12px;
+  width: 21px;
+  height: 21px;
+  left: -10px;
   top: -2px;
   background-image: url("../img/svg/radio-off.svg");
   background-size: contain;
@@ -1445,7 +1453,7 @@ input[name^="filler-"]:checked:disabled + label::before {
 input[name^="filler-"] + label::before {
   content: "";
   position: absolute;
-  width: 20px;
+  width: 24px;
   height: 20px;
   left: -11.5px;
   top: -1.5px;
@@ -1455,7 +1463,6 @@ input[name^="filler-"] + label::before {
 }
 
 input[name^="filler-"]:checked + label::before {
-  width: 23px;
   background-image: url("../img/svg/checkbox-on.svg");
 }
 
@@ -1676,7 +1683,7 @@ input[name^="filler-"]:first-child + label::before {
 
 /* probably should just make border-bottom using ::after */
 .footer-links-item:not(.heart) a,
-.footer-links-item span,
+.footer-links-item b,
 .footer-copyright-link {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
