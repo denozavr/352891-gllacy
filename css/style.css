@@ -97,35 +97,29 @@ textarea:focus {
   box-shadow: 0 0 0 2px #8fbdec;
 }
 
-form[class$="-form"] input:focus::-webkit-input-placeholder,
-form[class$="-form"] textarea:focus::-webkit-input-placeholder {
+:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-form[class$="-form"] input:focus:-ms-input-placeholder,
-form[class$="-form"] textarea:focus:-ms-input-placeholder {
+:focus:-ms-input-placeholder {
+  color: transparent !important; /*it is intentional without !important :placeholder not work in IE 11*/
+}
+
+:focus::placeholder {
   color: transparent;
 }
 
-form[class$="-form"] input:focus::placeholder,
-form[class$="-form"] textarea:focus::placeholder {
-  color: transparent;
-}
-
-form[class$="-form"] input::-webkit-input-placeholder,
-form[class$="-form"] textarea::-webkit-input-placeholder {
+::-webkit-input-placeholder {
   font-weight: 400;
   color: #999999;
 }
 
-form[class$="-form"] input:-ms-input-placeholder,
-form[class$="-form"] textarea:-ms-input-placeholder {
-  font-weight: 400;
-  color: #999999;
+:-ms-input-placeholder {
+  font-weight: 400 !important; /*it is intentional without !important :placeholder not work in IE 11*/
+  color: #999999 !important; /*it is intentional without !important :placeholder not work in IE 11*/
 }
 
-form[class$="-form"] input::placeholder,
-form[class$="-form"] textarea::placeholder {
+::placeholder {
   font-weight: 400;
   color: #999999;
 }
@@ -906,7 +900,6 @@ td.basket-long-title {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   list-style: none;
-
   min-height: 325px;
 }
 
@@ -1034,19 +1027,19 @@ small.weight::before {
 }
 
 .features {
-
   min-height: 307px;
   margin-top: 38px;
-  padding: 26px 20px;
+  padding: 25px 20px;
   background-color: #ebdfc4;
   background-image: url("../img/bg-wafer.jpg");
   border-radius: 15px;
 }
 
 .features-heading {
+  font-weight: 500;
   font-size: 24px;
   line-height: 30px;
-  word-spacing: 1.1px;
+  word-spacing: 1.25px;
 }
 
 .features-list {
@@ -1070,6 +1063,10 @@ small.weight::before {
   padding-top: 22px;
   padding-right: 2px;
   padding-left: 56px;
+}
+
+.features-item:nth-child(even) {
+  padding-left: 58px;
 }
 
 .features-item::before {
@@ -1171,7 +1168,6 @@ small.weight::before {
 
 .location {
   margin-top: 40px;
-
   min-height: 432px;
 }
 
