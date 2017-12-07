@@ -49,3 +49,27 @@ window.addEventListener('keydown', function (evt) {
     }
   }
 });
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.querySelector('.interactive-map'), {
+    zoom: 16,
+    center: new google.maps.LatLng(59.9393719, 30.328083),
+    mapTypeId: 'roadmap'
+  });
+
+  var markerImage = new google.maps.MarkerImage(
+      'img/pin-marker.png',
+      null,
+      new google.maps.Point(0, 0),
+      new google.maps.Point(45, 125)
+  );
+
+  var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(59.938794, 30.323083),
+    icon: markerImage,
+    map: map
+  });
+}
+
+

@@ -1198,11 +1198,28 @@ small.weight::before {
   z-index: 1;
 }
 
+.location-map img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0;
+}
+
+.interactive-map {
+  position: relative;
+  z-index: 2;
+  width: 1200px;
+  height: 430px;
+  border: none;
+}
+
 .contacts {
   position: absolute;
   top: 62px;
   right: 27px;
   width: 302px;
+  z-index: 3;
   height: 305px;
   padding: 14px 25px 30px;
   background-color: #fffffe;
