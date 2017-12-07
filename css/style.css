@@ -97,29 +97,29 @@ textarea:focus {
   box-shadow: 0 0 0 2px #8fbdec;
 }
 
-:focus::-webkit-input-placeholder {
+.custom-placeholder:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-:focus:-ms-input-placeholder {
-  color: transparent !important; /*it is intentional without !important :placeholder not work in IE 11*/
-}
-
-:focus::placeholder {
+.custom-placeholder:focus:-ms-input-placeholder {
   color: transparent;
 }
 
-::-webkit-input-placeholder {
+.custom-placeholder:focus::placeholder {
+  color: transparent;
+}
+
+.custom-placeholder::-webkit-input-placeholder {
   font-weight: 400;
   color: #999999;
 }
 
-:-ms-input-placeholder {
+.custom-placeholder:-ms-input-placeholder {
   font-weight: 400 !important; /*it is intentional without !important :placeholder not work in IE 11*/
   color: #999999 !important; /*it is intentional without !important :placeholder not work in IE 11*/
 }
 
-::placeholder {
+.custom-placeholder::placeholder {
   font-weight: 400;
   color: #999999;
 }
