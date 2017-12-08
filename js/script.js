@@ -5,11 +5,10 @@ var link = document.querySelector('.button-contacts');
 var popup = document.querySelector('.modal-contacts');
 var close = popup.querySelector('.modal-close');
 
-var form = popup.querySelector('form');
-var clientName = popup.querySelector('input[name="contact-name"]');
-// strange bug, if variable has 'name' title, then HtmlInputElement is returned and .focus() does not work
-var email = popup.querySelector('input[name="contact-email"]');
-var comment = popup.querySelector('[name=contact-comment]');
+var form = popup.querySelector('.contact-form');
+var clientName = popup.querySelector('.contact-name');
+var email = popup.querySelector('.contact-email');
+var comment = popup.querySelector('.contact-comment');
 
 var storageName = localStorage.getItem('clientName');
 var storageEmail = localStorage.getItem('email');
@@ -71,5 +70,3 @@ function initMap() {
     map: map
   });
 }
-
-

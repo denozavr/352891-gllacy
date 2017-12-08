@@ -51,7 +51,7 @@
                 <h2 class="visually-hidden">Поиск по сайту</h2>
                 <form class="search-form show-on-hover" action="https://echo.htmlacademy.ru" method="get">
                   <label class="visually-hidden" for="search-field">Поиск</label>
-                  <input id="search-field" class="custom-placeholder" type="search" name="search" placeholder="Что ищем?">
+                  <input id="search-field" class="custom-placeholder input-text" type="search" name="search" placeholder="Что ищем?">
                 </form>
               </section>
             </li>
@@ -69,11 +69,11 @@
                 <form class="login-form show-on-hover" action="https://echo.htmlacademy.ru" method="post">
                   <p>
                     <label class="visually-hidden" for="login-email">Электронная почта</label>
-                    <input id="login-email" class="custom-placeholder" type="email" name="login-email" placeholder="Электронная почта" required>
+                    <input id="login-email" class="custom-placeholder input-text" type="email" name="login-email" placeholder="Электронная почта" required>
                   </p>
                   <p>
                     <label class="visually-hidden" for="login-password">Пароль</label>
-                    <input id="login-password" class="custom-placeholder" type="password" name="login-password" placeholder="Пароль" required>
+                    <input id="login-password" class="custom-placeholder input-text" type="password" name="login-password" placeholder="Пароль" required>
                   </p>
 
                   <div>
@@ -177,28 +177,28 @@
             <fieldset class="filter-fats">
               <legend>Жирность:</legend>
               <div>
-                <input id="filter-fat-0" class="visually-hidden" type="radio" name="fat-percent" value="0">
+                <input id="filter-fat-0" class="visually-hidden fat-radio" type="radio" name="fat-percent" value="0">
                 <label for="filter-fat-0">0%</label>
-                <input id="filter-fat-less-10" class="visually-hidden" type="radio" name="fat-percent" value="0-10" checked>
+                <input id="filter-fat-less-10" class="visually-hidden fat-radio" type="radio" name="fat-percent" value="0-10" checked>
                 <label for="filter-fat-less-10">до 10%</label>
-                <input id="filter-fat-less-30" class="visually-hidden" type="radio" name="fat-percent" value="10-30">
+                <input id="filter-fat-less-30" class="visually-hidden fat-radio" type="radio" name="fat-percent" value="10-30">
                 <label for="filter-fat-less-30">до 30%</label>
-                <input id="filter-fat-more-30" class="visually-hidden" type="radio" name="fat-percent" value="30+">
+                <input id="filter-fat-more-30" class="visually-hidden fat-radio" type="radio" name="fat-percent" value="30+">
                 <label for="filter-fat-more-30">выше 30%</label>
               </div>
             </fieldset>
             <fieldset class="filter-fillers">
               <legend>Наполнители:</legend>
               <div class="filter-checboxes">
-                <input id="filter-filler-chocolote" class="visually-hidden" type="checkbox" name="filler-chocolote" checked>
+                <input id="filter-filler-chocolote" class="visually-hidden filler-checkbox" type="checkbox" name="filler-chocolote" checked>
                 <label for="filter-filler-chocolote">шоколадные</label>
-                <input id="filter-filler-sugar" class="visually-hidden" type="checkbox" name="filler-sugar" checked>
+                <input id="filter-filler-sugar" class="visually-hidden filler-checkbox" type="checkbox" name="filler-sugar" checked>
                 <label for="filter-filler-sugar">сахарные присыпки</label>
-                <input id="filter-filler-fruit" class="visually-hidden" type="checkbox" name="filler-fruit">
+                <input id="filter-filler-fruit" class="visually-hidden filler-checkbox" type="checkbox" name="filler-fruit">
                 <label for="filter-filler-fruit">фрукты</label>
-                <input id="filter-filler-syrops" class="visually-hidden" type="checkbox" name="filler-syrops">
+                <input id="filter-filler-syrops" class="visually-hidden filler-checkbox" type="checkbox" name="filler-syrops">
                 <label for="filter-filler-syrops">сиропы</label>
-                <input id="filter-filler-jams" class="visually-hidden" type="checkbox" name="filler-jams">
+                <input id="filter-filler-jams" class="visually-hidden filler-checkbox" type="checkbox" name="filler-jams">
                 <label for="filter-filler-jams">джемы</label>
               </div>
             </fieldset>

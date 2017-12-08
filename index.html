@@ -21,7 +21,7 @@
                 <img src="img/svg/logo.svg" width="154" height="64" alt="Логотип Глэйси">
               </span>
               <ul class="site-navigation">
-                <li class="site-navigation-catalog">
+                <li>
                   <a class="site-navigation-link site-navigation-catalog" href="#"><span>Каталог</span></a>
                   <ul class="catalog-submenu">
                     <li>
@@ -56,7 +56,7 @@
                       <h2 class="visually-hidden">Поиск по сайту</h2>
                       <form class="search-form show-on-hover" action="https://echo.htmlacademy.ru" method="get">
                         <label class="visually-hidden" for="search-field">Поиск</label>
-                        <input id="search-field" class="custom-placeholder" type="search" name="search" placeholder="Что ищем?">
+                        <input id="search-field" class="custom-placeholder input-text" type="search" name="search" placeholder="Что ищем?">
                       </form>
                   </section>
               </li>
@@ -74,11 +74,11 @@
                     <form class="login-form show-on-hover" action="https://echo.htmlacademy.ru" method="post">
                       <p>
                         <label class="visually-hidden" for="login-email">Электронная почта</label>
-                        <input id="login-email" class="custom-placeholder" type="email" name="login-email" placeholder="Электронная почта" required>
+                        <input id="login-email" class="custom-placeholder input-text" type="email" name="login-email" placeholder="Электронная почта" required>
                       </p>
                       <p>
                         <label class="visually-hidden" for="login-password">Пароль</label>
-                        <input id="login-password" class="custom-placeholder" type="password" name="login-password" placeholder="Пароль" required>
+                        <input id="login-password" class="custom-placeholder input-text" type="password" name="login-password" placeholder="Пароль" required>
                       </p>
 
                       <div>
@@ -227,7 +227,7 @@
               </p>
               <form class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
                 <label class="visually-hidden" for="subscription-email">Электронная почта</label>
-                <input id="subscription-email" class="custom-placeholder" type="email" name="subscription-email" placeholder="Электронная почта" required>
+                <input id="subscription-email" class="custom-placeholder input-text" type="email" name="subscription-email" placeholder="Электронная почта" required>
                 <button class="button button-submit" type="submit">Отправить</button>
               </form>
             </article>
@@ -321,15 +321,15 @@
       <form class="contact-form" action="https://echo.htmlacademy.ru" method="post">
         <p>
           <label class="visually-hidden" for="contact-name">Ваше имя</label>
-          <input id="contact-name" class="custom-placeholder" type="text" name="contact-name" placeholder="Как вас зовут?" required>
+          <input id="contact-name" class="custom-placeholder input-text contact-name" type="text" name="contact-name" placeholder="Как вас зовут?" required>
         </p>
         <p>
           <label class="visually-hidden" for="contact-email">Ваша электронная почта</label>
-          <input id="contact-email" class="custom-placeholder" type="email" name="contact-email" placeholder="Ваша почта для ответа?" required>
+          <input id="contact-email" class="custom-placeholder input-text contact-email" type="email" name="contact-email" placeholder="Ваша почта для ответа?" required>
         </p>
         <p>
           <label class="visually-hidden" for="contact-comment">Ваш комментарий</label>
-          <textarea id="contact-comment" class="custom-placeholder" name="contact-comment" cols="53" rows="10" placeholder="Напишите что-нибудь..." required></textarea><!-- 428 на 155 -->
+          <textarea id="contact-comment" class="custom-placeholder input-text contact-comment" name="contact-comment" cols="53" rows="10" placeholder="Напишите что-нибудь..." required></textarea><!-- 428 на 155 -->
         </p>
 
         <button class="button button-submit" type="submit">Отправить</button>
