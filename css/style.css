@@ -1896,8 +1896,8 @@ fieldset > div {
 
 @keyframes scaleup {
   0% {
-    -webkit-transform: scale(0.5) translate(110%, -20%);
-    transform: scale(0.5) translate(110%, -20%);
+    -webkit-transform: scale(0.5) translate(110%, -55%);
+    transform: scale(0.5) translate(110%, -55%);
     opacity: 0;
   }
 
