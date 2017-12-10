@@ -952,6 +952,7 @@ li[class$="-item"] > a {
   display: inline-block;
   padding-left: 36px;
   font-size: 28px;
+  vertical-align: baseline;
 }
 
 .weight::before {
@@ -1514,6 +1515,7 @@ fieldset > div {
   top: -2px;
   background-image: url("../img/svg/radio-off.svg");
   background-size: contain;
+  opacity: 0.8;
 }
 
 .fat-radio:checked + label::before {
@@ -1521,8 +1523,10 @@ fieldset > div {
 }
 
 .fat-radio + label:hover::before,
+.fat-radio:focus + label::before,
 .fat-radio:checked + label:hover::before,
 .filler-checkbox + label:hover::before,
+.filler-checkbox:focus + label::before,
 .filler-checkbox:checked + label:hover::before {
   opacity: 1;
 }
@@ -1561,6 +1565,7 @@ fieldset > div {
   background-image: url("../img/svg/checkbox-off.svg");
   background-size: contain;
   background-repeat: no-repeat;
+  opacity: 0.8;
 }
 
 .filler-checkbox:checked + label::before {
@@ -1964,5 +1969,5 @@ fieldset > div {
   .pagination {
     margin-bottom: 28px;
   }
-
 }
+
