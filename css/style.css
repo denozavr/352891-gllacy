@@ -828,18 +828,22 @@ li[class$="-item"] > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
   min-height: 230px;
-  margin-top: 40px;
 }
 
 .promotion div {
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 560px;
   width: 48.9%;
+  margin-top: 40px;
   padding: 0 20px;
+  padding-bottom: 23px;
   border-radius: 20px;
   min-height: 230px;
 }
@@ -861,15 +865,14 @@ li[class$="-item"] > a {
 }
 
 .promotion p {
+  min-height: 90px;
   margin: 0;
+  padding-bottom: 23px;
   font-size: 18px;
 }
 
 .promotion .button {
-  position: absolute;
   margin-left: auto;
-  bottom: 23px;
-  right: 19px;
   line-height: 24px;
 }
 
@@ -1109,16 +1112,17 @@ li[class$="-item"] > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
   min-height: 220px;
-  margin-top: 40px;
 }
 
 .blog-subscription-wrapper article {
   width: 48.9%;
   min-height: 220px;
+  margin-top: 40px;
 }
 
 .blog-post {
@@ -1477,12 +1481,12 @@ fieldset > div {
 }
 
 .filter-fats {
-  width: 418px;
+  min-width: 418px;
   margin-right: 3px;
 }
 
 .filter-fillers {
-  width: 703px;
+  min-width: 703px;
   margin-bottom: 2px;
 }
 
@@ -1618,7 +1622,7 @@ fieldset > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 190px;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
   margin-top: 81px;
