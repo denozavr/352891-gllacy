@@ -828,6 +828,7 @@ li[class$="-item"] > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
@@ -836,7 +837,12 @@ li[class$="-item"] > a {
 }
 
 .promotion div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   position: relative;
   width: 560px;
@@ -1112,6 +1118,7 @@ li[class$="-item"] > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
@@ -1375,7 +1382,7 @@ li[class$="-item"] > a {
 }
 
 fieldset > div {
-  height: 37px;
+  min-height: 37px;
   margin-top: 5px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
@@ -1384,6 +1391,8 @@ fieldset > div {
 .fat-radio + label,
 .filler-checkbox + label {
   position: relative;
+  display: inline-block;
+  vertical-align: baseline;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1480,8 +1489,8 @@ fieldset > div {
   right: 44px;
 }
 
-.filter-fats {
-  min-width: 418px;
+.filter-form .filter-fats {
+  min-width: 415px;
   margin-right: 3px;
 }
 
@@ -1494,16 +1503,23 @@ fieldset > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-left: 10px;
+  padding-left: 15px;
 }
 
 .filter-fats label {
-  padding-left: 17px;
+  padding: 8px 0;
+}
+
+.filter-fats label:not(:last-child) {
+  margin-right: 19.5px;
 }
 
 .filter-fats label:last-child {
@@ -1512,11 +1528,11 @@ fieldset > div {
 
 .fat-radio + label::before {
   content: "";
-  position: absolute;
+  display: inline-block;
   width: 21px;
   height: 21px;
-  left: -12px;
-  top: -2px;
+  margin-right: 9px;
+  vertical-align: middle;
   background-image: url("../img/svg/radio-off.svg");
   background-size: contain;
   opacity: 0.8;
@@ -1546,26 +1562,30 @@ fieldset > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-left: 8px;
-  padding-right: 3px;
+  padding-right: 0;
+  padding-left: 16px;
 }
 
 .filter-fillers label {
-  padding-left: 21px;
+  margin-right: 20.5px;
+  padding: 9px 0;
 }
 
 .filler-checkbox + label::before {
   content: "";
-  position: absolute;
+  display: inline-block;
   width: 24px;
   height: 20px;
-  left: -11.5px;
-  top: -1.5px;
+  margin-right: 9px;
+  vertical-align: middle;
   background-image: url("../img/svg/checkbox-off.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -1577,7 +1597,7 @@ fieldset > div {
 }
 
 .filler-checkbox:first-child + label::before {
-  left: -9px;
+  margin-right: 7px;
 }
 
 .button-filter-submit {
@@ -1622,6 +1642,8 @@ fieldset > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
   margin: 0;
   padding: 0;
